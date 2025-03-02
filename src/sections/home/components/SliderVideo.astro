@@ -1,0 +1,90 @@
+<div class="swiper-container">
+  <!-- Contenedor principal de Swiper -->
+  <div class="swiper">
+    <!-- Wrapper adicional requerido -->
+    <div class="swiper-wrapper">
+      <!-- Los slides -->
+      <div class="swiper-slide">
+        <video
+          controls
+          poster="https://i.pinimg.com/736x/8d/78/e2/8d78e204f5186c6b7f53ff58f8aabee0.jpg"
+        >
+          <source
+            src="/videos/vertical-01-nino-optimizado.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <video controls>
+          <source
+            src="/videos/vertical-02-mujer-optimizado.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <video controls>
+          <source
+            src="/videos/vertical-03-escalera-optimizado.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="swiper-slide">
+        <video controls>
+          <source
+            src="/videos/vertical-01-nino-optimizado.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+    <!-- Botones de navegación -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+
+<style>
+  .swiper-container {
+    width: 40%;
+  }
+  .swiper {
+    margin-top: 2rem;
+    width: 600px;
+  }
+  .swiper-wrapper {
+    display: flex;
+  }
+  .swiper-slide {
+    border-radius: 10px;
+  }
+  .swiper-slide video {
+    height: 300px;
+    object-fit: cover;
+    aspect-ratio: 9 / 16 !important;
+  }
+</style>
+
+<script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from "swiper/modules";
+  import "swiper/css/navigation";
+
+  // Configurar Swiper
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation], // definir los módulos a usar
+    loop: true, // definir si los slides estarán en bucle
+    slidesPerView: 3, // agregar número de slides para la pantalla
+    spaceBetween: 40, // separación entre slides en px
+    navigation: {
+      // definir botones next y prev para el módulo Navigation
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    },
+  });
+</script>

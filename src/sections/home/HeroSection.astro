@@ -1,0 +1,43 @@
+---
+import SliderVideo from "./components/SliderVideo.astro";
+---
+
+<section class="hero-section">
+  <div class="all-courses-container">
+    <h1 class="title us-text-6xl us-bold">Encuentra tu curso</h1>
+
+    <p class="us-text-xl us-semi-bold">
+      Berlitz ofrece una variedad de cursos de idiomas y cultura para adultos,
+      niños y adolescentes, empresas y más.
+    </p>
+    <p class="us-text-xl us-semi-bold">
+      Elija entre las opciones a continuación para encontrar su curso ideal y
+      comience a progresar con nosotros.
+    </p>
+
+    <button class="us-btn">Ver</button>
+  </div>
+  <SliderVideo />
+</section>
+
+<style>
+  .hero-section {
+    display: flex;
+    gap: 2rem;
+    max-width: 120ch;
+    margin: 0 auto;
+  }
+
+  .all-courses-container {
+    width: 60%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: start;
+
+    .title {
+      margin-bottom: 1.5rem;
+    }
+  }
+</style>
