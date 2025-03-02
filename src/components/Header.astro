@@ -6,19 +6,21 @@ import MenuIcon from "./icons/MenuIcon.astro";
   <div class="header">
     <div class="logo-container">
       <img src="/logo.png" />
-      <h2 class="us-text-4xl us-bold">Capacitar</h2>
+      <h2 class="cs-text-4xl cs-bold">Capacitar</h2>
     </div>
     <div class="options-container">
-      <button class="us-btn">Whasawasa</button>
+      <a class="cs-btn cs-bg-green-wh cs-color-white" href="#">whatsapp</a>
       <MenuIcon />
     </div>
   </div>
 </header>
 
 <style>
+  header {
+    background-color: var(--bg-white);
+  }
   .header {
     display: flex;
-    background-color: rgb(253, 247, 239);
     height: 90px;
     max-width: 180ch;
     padding: 1rem 0;
@@ -37,9 +39,9 @@ import MenuIcon from "./icons/MenuIcon.astro";
     }
 
     .options-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
   }
 </style>
