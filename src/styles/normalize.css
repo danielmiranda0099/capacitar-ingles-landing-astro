@@ -32,6 +32,9 @@ body {
   overflow-x: hidden;
   line-height: inherit;
   min-height: 100dvh;
+
+  color: #212947;
+  background-color: #fafffe;
 }
 
 main {
