@@ -67,6 +67,14 @@
   line-height: calc(1.75 / 1.25);
 }
 
+.us-text-3xl {
+  font-size: 1.875rem;
+  line-height: calc(2.25 / 1.875);
+}
+.us-text-4xl {
+  font-size: 2.25rem;
+  line-height: calc(2.5 / 2.25);
+}
 .us-text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -84,12 +92,15 @@
 /*************************** BUTTON ***************************************/
 
 .us-btn {
-    display: flex;
-    width: fit-content;
-    padding: 0.7rem 1.7rem;
-    background-color: #3acaff;
-    background-color: #80ed99;
-    font-size: var(--cc-size-1);
-    border-radius: 12px;
-    font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.7rem 1.7rem;
+  background-color: #3acaff;
+  background-color: #80ed99;
+  font-size: var(--cc-size-1);
+  border-radius: 12px;
+  font-weight: 700;
 }

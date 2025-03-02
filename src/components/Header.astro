@@ -1,0 +1,45 @@
+---
+import MenuIcon from "./icons/MenuIcon.astro";
+---
+
+<header>
+  <div class="header">
+    <div class="logo-container">
+      <img src="/logo.png" />
+      <h2 class="us-text-4xl us-bold">Capacitar</h2>
+    </div>
+    <div class="options-container">
+      <button class="us-btn">Whasawasa</button>
+      <MenuIcon />
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    background-color: rgb(253, 247, 239);
+    height: 90px;
+    max-width: 180ch;
+    padding: 1rem 0;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 100%;
+      img {
+        height: 140%;
+      }
+    }
+
+    .options-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+  }
+</style>
