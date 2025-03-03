@@ -39,6 +39,14 @@
           />
         </video>
       </div>
+      <div class="swiper-slide">
+        <video controls>
+          <source
+            src="/videos/vertical-03-escalera-optimizado.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
     </div>
     <!-- Botones de navegación -->
     <div class="swiper-button-prev"></div>
@@ -58,12 +66,51 @@
     display: flex;
   }
   .swiper-slide {
-    border-radius: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    -webkit-box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
+    box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
   }
   .swiper-slide video {
     height: 300px;
     object-fit: cover;
+    border-radius: 12px;
     aspect-ratio: 9 / 16 !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 110%;
+    width: 150%;
+    width: 3rem;
+    background: var(--bg-white-100);
+  }
+  .swiper-button-prev {
+    transform: translate(-30%, -50%);
+  }
+  .swiper-button-next {
+    transform: translate(30%, -50%);
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.8rem;
+    color: var(--color-blue-700);
+    font-weight: 900;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .swiper-button-prev::after {
+    margin-right: -1.5rem;
+  }
+  .swiper-button-next::after {
+    margin-left: -1.5rem;
   }
 </style>
 
@@ -72,15 +119,25 @@
   import Swiper from "swiper";
   import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation } from "swiper/modules";
+  import { Navigation, EffectCoverflow } from "swiper/modules";
   import "swiper/css/navigation";
+  import "swiper/css/effect-coverflow";
 
   // Configurar Swiper
   const swiper = new Swiper(".swiper", {
-    modules: [Navigation], // definir los módulos a usar
+    modules: [Navigation, EffectCoverflow], // definir los módulos a usar
+    effect: "coverflow",
     loop: true, // definir si los slides estarán en bucle
+    centeredSlides: true,
     slidesPerView: 3, // agregar número de slides para la pantalla
     spaceBetween: 40, // separación entre slides en px
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1.5,
+      slideShadows: true,
+    },
     navigation: {
       // definir botones next y prev para el módulo Navigation
       prevEl: ".swiper-button-prev",
@@ -88,3 +145,33 @@
     },
   });
 </script>
+
+<!-- <script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+  import "swiper/css/navigation";
+  import "swiper/css/effect-coverflow";
+  import "swiper/css/pagination";
+
+  // Configurar Swiper
+  let swiper = new Swiper(".swiper", {
+    modules: [EffectCoverflow],
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+</script> -->
