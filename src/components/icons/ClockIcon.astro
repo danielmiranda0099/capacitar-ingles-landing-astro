@@ -1,0 +1,15 @@
+---
+import IconWraper from "./IconWraper.astro";
+
+interface Props {
+  stroke?: string;
+  className?: string;
+}
+
+const { className = "", stroke = "currentColor" } = Astro.props;
+---
+
+<IconWraper stroke={stroke} className={className}>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"
+  ></polyline>
+</IconWraper>
