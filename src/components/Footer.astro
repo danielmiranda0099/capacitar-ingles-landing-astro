@@ -1,0 +1,87 @@
+---
+import MapPinIcon from "./icons/MapPinIcon.astro";
+import PhoneIcon from "./icons/PhoneIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import FacebookIcon from "./icons/FacebookIcon.astro";
+---
+
+<footer>
+  <div class="footer-logo">
+    <img src="/logo.png" />
+    <h2 class="cs-color-white cs-text-6xl cs-bold">Capacitar</h2>
+  </div>
+
+  <div class="footer-info">
+    <div>
+      <PhoneIcon /> (+57) 321 5387123
+    </div>
+    <div>
+      <PhoneIcon /> (+57) 311 6771698
+    </div>
+
+    <div>
+      <MapPinIcon /> Cra. 13a #24 A 28, Sincelejo, Sucre
+    </div>
+  </div>
+
+  <div class="footer-social">
+    <div>
+      <FacebookIcon className="w-2rem h-2rem" />
+    </div>
+    <div>
+      <InstagramIcon className="w-2rem h-2rem" />
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--bg-blue-700);
+    padding: 3rem 2rem;
+
+    .footer-logo {
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: white;
+      font-weight: 700;
+
+      div {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+      div {
+        height: fit-content;
+        width: fit-content;
+        background-color: white;
+        padding: 0.8rem;
+        border-radius: 100%;
+      }
+    }
+
+    .w-2rem {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+</style>
