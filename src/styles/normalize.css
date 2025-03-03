@@ -14,6 +14,7 @@ html {
   line-height: 1.5;
   font-family: var(
     --default-font-family,
+    "Inter",
     ui-sans-serif,
     system-ui,
     sans-serif,
@@ -292,16 +293,18 @@ object {
   padding-block: 0;
 }
 
-
 /* Restauración de estilos nativos para elementos específicos */
 /* Listas */
-ol, ul, menu {
+ol,
+ul,
+menu {
   margin: 0.5rem 0;
   padding-left: 2rem;
 }
 
 /* Tablas */
-td, th {
+td,
+th {
   padding: 0.5rem;
 }
 
@@ -334,6 +337,8 @@ summary {
 }
 
 /* Entradas de formulario */
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 0.5rem;
 }

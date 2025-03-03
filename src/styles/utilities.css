@@ -67,6 +67,44 @@
   --size-44: calc(1rem * 44); /*384px 288px 192px*/
   --size-50: calc(1rem * 50); /*384px 288px 192px*/
 }
+/**************************************************************************/
+/************************** FONTS *****************************************/
+/* 
+100 - Thin / Hairline / Ultra Light
+200 - Extra Light / Ultra Light
+300 - Light
+400 - Regular / Normal / Book / Roman
+500 - Medium
+600 - Semi Bold / Demi Bold
+700 - Bold
+800 - Extra Bold / Ultra Bold
+900 - Black / Heavy / Ultra Black
+Algunos fabricantes de fuentes también incluyen:
+950 - Extra Black / Ultra Black / Super Black
+1000 - Maximum Black (menos común) 
+*/
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nista";
+  src: url("/fonts/NistaBlack.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 /**************************************************************************/
 /************************** BACKGROUNS ************************************/
@@ -87,7 +125,7 @@
   color: white;
 }
 /**************************************************************************/
-/*********************** TEXT / FONTS *************************************/
+/************************** TEXT SIZE *************************************/
 
 .cs-text-lg {
   font-size: 1.125rem;
