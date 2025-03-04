@@ -5,9 +5,7 @@
     <div class="swiper-wrapper">
       <!-- Los slides -->
       <div class="swiper-slide">
-        <video
-          controls
-        >
+        <video controls>
           <source
             src="/videos/vertical-01-nino-optimizado.mp4"
             type="video/mp4"
@@ -65,16 +63,13 @@
     display: flex;
   }
   .swiper-slide {
-    border-radius: 12px;
+    border-radius: 22px;
     overflow: hidden;
-    -webkit-box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
-    -moz-box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
-    box-shadow: -12px 8px 14px -5px rgba(0, 0, 0, 0.36);
   }
   .swiper-slide video {
     height: 300px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 22px;
     aspect-ratio: 9 / 16 !important;
   }
 
@@ -83,7 +78,7 @@
     height: 110%;
     width: 150%;
     width: 3rem;
-    background: var(--bg-white-100);
+    background: var(--bg-white);
   }
   .swiper-button-prev {
     transform: translate(-30%, -50%);
@@ -100,7 +95,7 @@
     font-size: 1.8rem;
     color: var(--color-blue-700);
     font-weight: 900;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.1);
