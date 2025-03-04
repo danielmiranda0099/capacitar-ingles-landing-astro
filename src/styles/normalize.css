@@ -35,7 +35,7 @@ body {
   min-height: 100dvh;
 
   color: var(--color-blue-700);
-  background-color: var(--bg-white-100);
+  background-color: var(--bg-white);
 }
 
 main {
@@ -127,10 +127,7 @@ table {
   border-collapse: collapse;
 }
 
-img {
-  border-style: none;
-  max-width: 100%;
-}
+
 
 button,
 input,
@@ -238,17 +235,6 @@ template,
   display: none;
 }
 
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  vertical-align: middle;
-}
 
 :-moz-focusring {
   outline: auto;
