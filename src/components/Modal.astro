@@ -1,0 +1,158 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+  closeOnOutsideClick?: boolean;
+  showCloseButton?: boolean;
+  showFooter?: boolean;
+  buttonText?: string;
+  buttonClass?: string;
+  buttonExitClass?: string;
+  modalClass?: string;
+  overlayClass?: string;
+  contentClass?: string;
+}
+
+const {
+  id,
+  title = "",
+  closeOnOutsideClick = true,
+  showCloseButton = true,
+  showFooter = true,
+  buttonText = "Abrir Modal",
+  buttonClass = "cs-btn cs-bg-blue-400 cs-color-white",
+  buttonExitClass = "modal-exit-btn cs-btn",
+  modalClass = "modal",
+  overlayClass = "modal-overlay",
+  contentClass = "modal-content",
+} = Astro.props;
+---
+
+<!-- Botón para abrir el modal -->
+<button id={`btn-${id}`} class={buttonClass}>{buttonText}</button>
+
+<!-- Overlay y contenedor del modal -->
+<div id={id} class={overlayClass}>
+  <div class={modalClass}>
+    <div class="modal-header">
+      <div>{title && <h2>{title}</h2>}</div>
+      {showCloseButton && <button class="close-btn">&times;</button>}
+    </div>
+    <div class={contentClass}>
+      <slot />
+    </div>
+    {
+      showFooter && (
+        <div class="modal-footer">
+          <button class={buttonExitClass}>Cerrar</button>
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    background-color: white;
+    border-radius: 22px;
+    width: fit-content;
+    max-width: 98%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .modal-exit-btn {
+    border: 1px solid var(--bg-blue-700);
+    font-weight: 200;
+  }
+
+  .modal-content {
+    margin-bottom: 15px;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>
+
+<script is:inline define:vars={{ id, closeOnOutsideClick }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Obtenemos referencias a los elementos
+    const modal = document.getElementById(id);
+    const openBtn = document.getElementById(`btn-${id}`);
+    const closeBtn = modal.querySelector(".close-btn");
+    const exitBtns = modal.querySelectorAll(".modal-exit-btn");
+    const modalContent = modal.querySelector(".modal");
+
+    // Función para abrir el modal
+    const openModal = () => {
+      modal.style.display = "flex";
+    };
+
+    // Función para cerrar el modal
+    const closeModal = () => {
+      modal.style.display = "none";
+    };
+
+    // Event listener para el botón de apertura
+    openBtn.addEventListener("click", openModal);
+
+    // Event listener para el botón de cierre (X)
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeModal);
+    }
+
+    // Event listener para todos los botones de salida
+    exitBtns.forEach((btn) => {
+      btn.addEventListener("click", closeModal);
+    });
+
+    // Event listener para cerrar al hacer clic en el overlay
+    if (closeOnOutsideClick) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    // Event listener para tecla ESC
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.style.display === "flex") {
+        closeModal();
+      }
+    });
+  });
+</script>

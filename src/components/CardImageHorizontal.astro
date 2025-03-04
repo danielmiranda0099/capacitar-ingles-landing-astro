@@ -1,0 +1,64 @@
+---
+interface Props {
+  urlImage: string;
+  hrefUrl?: string;
+  title: string;
+  description?: string;
+  classCardContainer?: string;
+}
+
+const { urlImage, hrefUrl="#", title, description, classCardContainer } = Astro.props;
+---
+
+<a class={"card-container " + classCardContainer} href={hrefUrl}>
+  <div class="card-image-container">
+    <img src={urlImage} />
+  </div>
+  <div class="info-container">
+    <p class="title cs-text-xl2">{title}</p>
+    {description && <p class="description">{description}</p>}
+  </div>
+</a>
+
+<style>
+  .card-container {
+    display: flex;
+    width: 27rem;
+    height: 7rem; /* Cambio de max-height a height */
+    /* background-color: rgb(218, 255, 236); */
+    background-color: var(--bg-white-100);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    .card-image-container {
+      width: 30%;
+      height: 100%; /* Ocupa toda la altura */
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 100%; /* Ajusta al 100% de altura */
+        width: auto; /* Ancho automático */
+        object-fit: cover; /* Mantiene proporción */
+        max-width: 100%; /* Previene desbordamiento */
+      }
+    }
+
+    .info-container {
+      width: 70%;
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+</style>

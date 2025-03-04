@@ -1,5 +1,7 @@
 ---
+import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
 import SliderVideo from "./components/SliderVideo.astro";
+import Modal from "@/components/Modal.astro";
 ---
 
 <section class="hero-section">
@@ -15,8 +17,46 @@ import SliderVideo from "./components/SliderVideo.astro";
       comience a progresar con nosotros.
     </p>
 
-    <button class="cs-btn cs-bg-blue-400 cs-color-white">Ver</button>
+    <Modal id="modal" buttonText="Ver">
+      <div class="modal-content-courses-info">
+        <div>
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+        </div>
+        <div>
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+          <CardImageHorizontal
+            urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
+            title="Ingles Conversacional"
+            classCardContainer="modal-exit-btn"
+          />
+        </div>
+      </div>
+    </Modal>
   </div>
+
   <SliderVideo />
 </section>
 
@@ -26,6 +66,7 @@ import SliderVideo from "./components/SliderVideo.astro";
     gap: 2rem;
     max-width: 150ch;
     margin: 0 auto;
+    margin-bottom: 500px;
   }
 
   .all-courses-container {
@@ -33,17 +74,28 @@ import SliderVideo from "./components/SliderVideo.astro";
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    justify-content: center;
     justify-items: start;
+    padding-top: 3rem;
 
     .title {
       margin-bottom: 0.8rem;
-      font-family: 'Nista', 'Times New Roman', Times, serif;
+      font-family: "Nista", "Times New Roman", Times, serif;
       font-weight: 900;
     }
 
     p {
       font-weight: 500;
+    }
+
+    .modal-content-courses-info {
+      display: flex;
+      gap: 1rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   }
 </style>
