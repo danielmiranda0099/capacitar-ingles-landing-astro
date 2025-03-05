@@ -1,0 +1,80 @@
+---
+
+---
+
+<!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img
+        src="https://www.els.edu/hubfs/ELS/Website/Homepage/diverse-students-studying-english-els-usa.png"
+      />
+    </div>
+    <div class="swiper-slide">
+      <img
+        src="https://wpvip.edutopia.org/wp-content/uploads/2022/10/iStock-648946500_master.jpg"
+      />
+    </div>
+    <div class="swiper-slide">
+      <img
+        src="https://d39eazhratf38c.cloudfront.net/Pictures/1024x536/8/2/7/60827_136864_631984.jpg"
+      />
+    </div>
+    <div class="swiper-slide">
+      <img
+        src="https://content.twinkl.co.uk/website/uploaded/ellie-blog-thumbnail-1610626054.jpg"
+      />
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<style>
+  .swiper {
+    width: 60%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<!-- Initialize Swiper -->
+<script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation, Pagination } from "swiper/modules";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  var swiper = new Swiper(".mySwiper", {
+    modules: [Navigation, Pagination],
+    loop: true, // definir si los slides estarán en bucle
+    centeredSlides: true,
+    pagination: {
+      type: "progressbar"
+    },
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      enabled: true,
+    },
+  });
+</script>
