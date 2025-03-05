@@ -1,0 +1,45 @@
+---
+import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
+---
+
+<section class="get-in-to-section">
+  <p class="title-section cs-text-2xl">
+    Si ya estas registrado, accede a tu plataforma
+  </p>
+
+  <div class="cards-container">
+    <CardImageHorizontal
+      urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+      title="Ingles conversacional"
+      classCardContainer="modal-exit-btn"
+    />
+    <CardImageHorizontal
+      urlImage="/icons/icono-ingles-para-ninos-up-optimizado.webp"
+      title="Ingles para niños"
+      classCardContainer="modal-exit-btn"
+    />
+    <CardImageHorizontal
+      urlImage="/icons/icono-otros-idiomas-up-optimizado.webp"
+      title="Otros idiomas"
+      classCardContainer="modal-exit-btn"
+    />
+  </div>
+</section>
+
+<style>
+  .get-in-to-section {
+    max-width: 150ch;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+    .title-section {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+</style>
