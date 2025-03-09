@@ -10,15 +10,17 @@ import ClockIcon from "./icons/ClockIcon.astro";
 <footer>
   <div class="footer-logo">
     <img src="/logo.png" />
-    <h2 class="cs-color-white cs-text-6xl cs-bold">Capacitar</h2>
+    <div class="slogan">
+      <h2 class="cs-text-3xl cs-bold">
+        Instituto de Inglés, otros Idiomas y Artes
+      </h2>
+      <h2 class="cs-text-2xl cs-bold">CAPACITAR</h2>
+    </div>
   </div>
 
   <div class="footer-info">
     <div>
       <PhoneIcon /> (+57) 321 5387123
-    </div>
-    <div>
-      <PhoneIcon /> (+57) 311 6771698
     </div>
 
     <div>
@@ -59,9 +61,16 @@ import ClockIcon from "./icons/ClockIcon.astro";
       align-items: center;
       gap: 0.5rem;
 
-      h2 {
-        font-family: "Nista", "Times New Roman", Times, serif;
-        font-weight: 900;
+      & .slogan {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          text-align: center;
+          color: white;
+          font-family: "Nista", "Times New Roman", Times, serif;
+          font-weight: 900;
+        }
       }
     }
 
@@ -80,9 +89,13 @@ import ClockIcon from "./icons/ClockIcon.astro";
     .footer-social {
       display: flex;
       gap: 1.5rem;
-      div {
-        height: fit-content;
-        width: fit-content;
+      & div {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
         background-color: white;
         padding: 0.8rem;
         border-radius: 100%;
