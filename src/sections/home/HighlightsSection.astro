@@ -1,16 +1,11 @@
 ---
-import SliderNormal from "@/components/SliderNormal.astro";
+import SliderHighlights from "./components/SliderHighlights.astro";
+
+
 ---
 
 <section class="highlights-section">
-  <p class="cs-text-2xl">
-    En Capacitar, somos más que una academia; <span>somos una comunidad</span> que
-    crece junta. Nuestros estudiantes, desde recién graduados hasta profesionales
-    en el extranjero, siguen formando parte de esta familia que apoya, celebra y
-    motiva cada logro. Aquí, tu progreso nos importa.
-  </p>
-
-  <SliderNormal />
+  <SliderHighlights />
 </section>
 
 <style>
@@ -23,12 +18,5 @@ import SliderNormal from "@/components/SliderNormal.astro";
     height: 40vh;
 
     padding: 0.5rem;
-
-    & p {
-      width: 50%;
-      span {
-        font-weight: 700;
-      }
-    }
   }
 </style>
