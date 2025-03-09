@@ -21,7 +21,7 @@ const {
     <img src={urlImage} />
   </div>
   <div class="info-container">
-    <p class="title cs-text-xl2">{title}</p>
+    <p class="title cs-text-lg">{title}</p>
     {description && <p class="description">{description}</p>}
   </div>
 </a>
@@ -29,19 +29,19 @@ const {
 <style>
   .card-container {
     display: flex;
-    width: 27rem;
-    height: 6rem; /* Cambio de max-height a height */
-    /* background-color: rgb(218, 255, 236); */
+    width: 100%;
+    margin-bottom: 2.5rem;
+    height: 4rem; /* Cambio de max-height a height */
     background: rgba(255, 255, 255, 0.7);
-    box-shadow:
-      0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    background-color: rgba(241, 255, 247, 0.2);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 1);
     border-radius: 22px;
     overflow: hidden;
+    --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%), 0 4px 4px -2px rgb(16 30 30 / 10%);
+    box-shadow: 0 0 #0000, 0 0 #0000 ,0 0 #0000, 0 0 #0000,var(--tw-shadow);
 
     z-index: 1;
     .card-image-container {
@@ -52,7 +52,7 @@ const {
       justify-content: center;
       align-items: center;
       img {
-        height: 100%; /* Ajusta al 100% de altura */
+        height: 70%; /* Ajusta al 100% de altura */
         width: auto; /* Ancho automático */
         object-fit: cover; /* Mantiene proporción */
         max-width: 100%; /* Previene desbordamiento */
@@ -62,13 +62,14 @@ const {
     .info-container {
       width: 70%;
       display: flex;
-      padding: 1rem;
+      padding-left: 0.5rem;
       flex-direction: column;
       justify-content: center;
 
       .title {
         font-weight: 700;
         margin-bottom: 0.5rem;
+        line-height: 1.1;
       }
     }
   }
