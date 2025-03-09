@@ -189,4 +189,5 @@ Algunos fabricantes de fuentes también incluyen:
   font-size: var(--size-1);
   border-radius: 22px;
   font-weight: 700;
+  gap: 0.5rem;
 }
