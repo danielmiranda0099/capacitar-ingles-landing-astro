@@ -1,0 +1,181 @@
+<section class="certificate-section">
+  <div class="certificate-container">
+    <!-- Columna izquierda - Imagen del certificado -->
+    <div class="certificate-image">
+      <img 
+        src="/public/certificate.webp" 
+        alt="Certificado de Academia de Inglés"
+        class="certificate-img"
+      />
+    </div>
+    
+    <!-- Columna derecha - Contenido -->
+    <div class="certificate-content">
+      <h2 class="certificate-title">Certificación Internacional de Inglés</h2>
+      
+      <p class="certificate-description">
+        Obtén tu certificación oficial que valida tu dominio del idioma inglés. 
+        Nuestro programa está diseñado para prepararte con los más altos estándares 
+        internacionales y brindarte las herramientas necesarias para destacar en 
+        el ámbito profesional y académico.
+      </p>
+      
+      <ul class="certificate-benefits">
+        <li class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
+          <span>Reconocimiento internacional válido</span>
+        </li>
+        
+        <li class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
+          <span>Mejora tus oportunidades laborales</span>
+        </li>
+        
+        <li class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
+          <span>Acceso a universidades prestigiosas</span>
+        </li>
+        
+        <li class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
+          <span>Validez permanente sin vencimiento</span>
+        </li>
+        
+        <li class="benefit-item">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20,6 9,17 4,12"></polyline>
+          </svg>
+          <span>Soporte y seguimiento personalizado</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .certificate-section {
+    display: flex;
+    gap: 2rem;
+    max-width: 150ch;
+    margin: 0 auto;
+    margin-bottom: var(--size-2);
+  }
+
+  .certificate-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 2rem;
+    align-items: center;
+
+  }
+
+  .certificate-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .certificate-img {
+    width: 80%;
+    height: auto;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .certificate-content {
+    padding: 2rem 0;
+  }
+
+  .certificate-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .certificate-description {
+    font-size: 1.125rem;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+
+  .certificate-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 500;
+  }
+
+  .benefit-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .benefit-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    color: #000000;
+    flex-shrink: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .certificate-section {
+      padding: 2rem 1rem;
+    }
+
+    .certificate-container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .certificate-title {
+      font-size: 2rem;
+    }
+
+    .certificate-description {
+      font-size: 1rem;
+    }
+
+    .certificate-img {
+      max-width: 280px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .certificate-title {
+      font-size: 1.75rem;
+    }
+
+    .certificate-container {
+      gap: 2rem;
+    }
+
+    .benefit-item {
+      font-size: 0.95rem;
+    }
+  }
+</style>
