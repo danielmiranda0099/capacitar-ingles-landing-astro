@@ -5,7 +5,7 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
 
 <header>
   <div class="header">
-    <div class="logo-container">
+    <a href="/" class="logo-container">
       <img src="/logo.png" />
       <div class="slogan">
         <h2 class="cs-text-3xl cs-bold">
@@ -13,10 +13,13 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
         </h2>
         <h2 class="cs-text-2xl cs-bold">CAPACITAR</h2>
       </div>
-    </div>
+    </a>
     <div class="options-container">
+      <a href="/">Inicio</a>
+      <a href="/mision-vision">Misión/visión</a>
+      <a href="/">Metodologia</a>
       <a class="cs-btn button-inscription" href="#">Inscribete aquí <MousePointerClickIcon /></a>
-      <MenuIcon />
+      <!-- <MenuIcon /> -->
     </div>
   </div>
 </header>
@@ -63,6 +66,10 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
       display: flex;
       align-items: center;
       gap: 1rem;
+
+      & a {
+        font-weight: 600;
+      }
 
       & .button-inscription {
         font-weight: 700;
