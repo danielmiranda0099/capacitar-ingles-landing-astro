@@ -1,16 +1,19 @@
 ---
+// Modal.astro - Versión mejorada
 interface Props {
   id: string;
   title?: string;
   closeOnOutsideClick?: boolean;
   showCloseButton?: boolean;
   showFooter?: boolean;
+  showButton?: boolean; // Nueva prop para mostrar/ocultar botón
   buttonText?: string;
   buttonClass?: string;
   buttonExitClass?: string;
   modalClass?: string;
   overlayClass?: string;
   contentClass?: string;
+  triggerElements?: string[]; // Nueva prop para elementos que abren el modal
 }
 
 const {
@@ -18,18 +21,22 @@ const {
   title = "",
   closeOnOutsideClick = true,
   showCloseButton = true,
-  showFooter = true,
+  showFooter = false,
+  showButton = true, // Por defecto muestra el botón
   buttonText = "Abrir Modal",
   buttonClass = "cs-bg-blue-400 cs-color-white",
-  buttonExitClass = "modal-exit-btn cs-btn",
+  buttonExitClass = "cs-btn",
   modalClass = "modal",
   overlayClass = "modal-overlay",
   contentClass = "modal-content",
+  triggerElements = [], // Array de IDs de elementos que abren el modal
 } = Astro.props;
 ---
 
-<!-- Botón para abrir el modal -->
-<button id={`btn-${id}`} class={"cs-btn " + buttonClass}>{buttonText}</button>
+<!-- Botón para abrir el modal (condicional) -->
+{showButton && (
+  <button id={`btn-${id}`} class={"cs-btn " + buttonClass}>{buttonText}</button>
+)}
 
 <!-- Overlay y contenedor del modal -->
 <div id={id} class={overlayClass}>
@@ -44,7 +51,7 @@ const {
     {
       showFooter && (
         <div class="modal-footer">
-          <button class={buttonExitClass}>Cerrar</button>
+          <button class={"modal-exit-btn " + buttonExitClass}>Cerrar</button>
         </div>
       )
     }
@@ -59,82 +66,151 @@ const {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(4px);
   }
 
   .modal {
     position: relative;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background-color: white;
     border-radius: 22px;
-    width: fit-content;
-    max-width: 98%;
-    max-height: 90vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
   .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
   }
 
   .close-btn {
-    background: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    padding: 0;
+    padding: 8px 12px;
     line-height: 1;
-    z-index: 1;
+    border-radius: 50%;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    
   }
 
-  .modal-exit-btn {
-    border: 1px solid var(--bg-blue-700);
-    font-weight: 200;
+  .close-btn:hover {
+    background: white;
+    transform: scale(1.1);
   }
 
   .modal-content {
-    margin-bottom: 15px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .modal-footer {
     display: flex;
-    justify-content: flex-end;
-      button {
-        background-color: rgb(255, 255, 255, 0.5);
-        z-index: 1;
-      }
+    justify-content: end;
+  }
+
+  .modal-footer button {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .modal-footer button:hover {
+    background: white;
+    transform: translateY(-1px);
+  }
+
+  /* Estilos adicionales para elementos clickeables */
+  .modal-trigger {
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .modal-trigger:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
   }
 </style>
 
-<script is:inline define:vars={{ id, closeOnOutsideClick }}>
+<script is:inline define:vars={{ id, closeOnOutsideClick, triggerElements, showButton }}>
   document.addEventListener("DOMContentLoaded", () => {
     // Obtenemos referencias a los elementos
     const modal = document.getElementById(id);
-    const openBtn = document.getElementById(`btn-${id}`);
+    const openBtn = showButton ? document.getElementById(`btn-${id}`) : null;
     const closeBtn = modal.querySelector(".close-btn");
     const exitBtns = modal.querySelectorAll(".modal-exit-btn");
-    const modalContent = modal.querySelector(".modal");
 
     // Función para abrir el modal
     const openModal = () => {
       modal.style.display = "flex";
+      // document.body.style.overflow = "hidden"; // Prevenir scroll del body
     };
 
     // Función para cerrar el modal
     const closeModal = () => {
       modal.style.display = "none";
+      // document.body.style.overflow = "auto"; // Restaurar scroll del body
     };
 
-    // Event listener para el botón de apertura
-    openBtn.addEventListener("click", openModal);
+    // Event listener para el botón de apertura (si existe)
+    if (openBtn) {
+      openBtn.addEventListener("click", openModal);
+    }
+
+    // Event listeners para elementos trigger externos
+    triggerElements.forEach((elementId) => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        // Añadir clase para efectos visuales
+        element.classList.add("modal-trigger");
+        
+        // Añadir event listener
+        element.addEventListener("click", openModal);
+        
+        // Opcional: añadir atributo para accesibilidad
+        element.setAttribute("role", "button");
+        element.setAttribute("tabindex", "0");
+        element.setAttribute("aria-label", `Abrir modal: ${id}`);
+        
+        // Soporte para tecla Enter/Space
+        element.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openModal();
+          }
+        });
+      }
+    });
 
     // Event listener para el botón de cierre (X)
     if (closeBtn) {
