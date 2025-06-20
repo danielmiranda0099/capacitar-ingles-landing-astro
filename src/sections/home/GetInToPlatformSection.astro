@@ -1,31 +1,33 @@
 ---
-import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
+
 ---
 
 <section class="get-in-to-section">
   <p class="title-section cs-text-2xl">
-    Si ya estas registrado, accede a tu plataforma
+    Si ya estas registrado, accede a la plataforma
   </p>
 
-  <div class="cards-container">
-    <CardImageHorizontal
-      urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
-      title="Ingles conversacional"
-      classCardContainer="modal-exit-btn"
-      hrefUrl="https://virtual.capacitaringlesvirtual.tech/login/index.php"
-    />
-    <CardImageHorizontal
-      urlImage="/icons/icono-ingles-para-ninos-up-optimizado.webp"
-      title="Ingles para niños"
-      classCardContainer="modal-exit-btn"
-      hrefUrl="https://virtual.capacitaringlesvirtual.tech/login/index.php"
-    />
-    <CardImageHorizontal
-      urlImage="/icons/icono-otros-idiomas-up-optimizado.webp"
-      title="Cursos gratis"
-      classCardContainer="modal-exit-btn"
-      hrefUrl="https://virtual.capacitaringlesvirtual.tech/login/index.php"
-    />
+  <div class="shields-container">
+    <div class="course-shield" id="course-shield-1">
+      <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
+      <p class="">Ingles conversacional</p>
+    </div>
+    <div class="course-shield" id="course-shield-2">
+      <img src="/icons/icono-ingles-para-ninos-up-optimizado.webp" />
+      <p class="">Ingles para niños</p>
+    </div>
+    <div class="course-shield">
+      <img src="/icons/icon-bilingual-comunity-up-optimizado.webp" />
+      <p class="">Frances conversacional</p>
+    </div>
+    <div class="course-shield">
+      <img src="/icons/icono-otros-idiomas-up-optimizado.webp" />
+      <p class="">Conversación con nativos</p>
+    </div>
+    <div class="course-shield">
+      <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
+      <p class="">Otros idiomas</p>
+    </div>
   </div>
 </section>
 
@@ -40,9 +42,66 @@ import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
       margin-bottom: 1rem;
     }
 
-    .cards-container {
+    & .shields-container {
       display: flex;
       gap: 0.5rem;
+
+      & .course-shield {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 12rem;
+        height: 12rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 3px;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+        backdrop-filter: blur(40px);
+
+        /* z-index: 10000 !important; */
+        & img {
+          padding-top: 0.5rem;
+          width: 35%;
+          height: 35%;
+          aspect-ratio: 1/1 !important;
+          margin-bottom: 1.5rem;
+        }
+
+        & p {
+          font-size: 1.2rem;
+          text-align: center;
+          font-weight: 700;
+          line-height: 1.1;
+          text-wrap: balance;
+        }
+
+        & span {
+          font-weight: 700;
+          line-height: 1.1;
+          padding: 0.5rem;
+          background-color: var(--bg-blue-400);
+          width: 100%;
+          color: white;
+          text-align: center;
+          position: absolute;
+          top: 70%;
+          transform: translateY(-100%);
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+        }
+      }
+
+      & .course-shield::before {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        /* border: 2px solid black; */
+        background-color: rgba(240, 255, 244, 1);
+        /* backdrop-filter: blur(40px); */
+        clip-path: inherit; /* Usa la misma forma */
+        z-index: -1;
+      }
     }
   }
 </style>
