@@ -76,29 +76,29 @@
         width: 3rem;
         width: 40%;
         background: var(--bg-white);
-        background-color: red;
+        background-color: transparent;
       }
       .swiper-button-prev {
         transform: translate(-10%, -50%);
-        background: rgb(255, 255, 255);
+        /* background: rgb(255, 255, 255);
         background: linear-gradient(
           270deg,
           rgba(255, 255, 255, 0) 0%,
           rgba(255, 255, 255, 0.5690651260504201) 23%,
           rgba(255, 255, 255, 1) 64%,
           rgba(255, 255, 255, 1) 100%
-        );
+        ); */
       }
       .swiper-button-next {
         transform: translate(10%, -50%);
-        background: rgb(255, 255, 255);
+        /* background: rgb(255, 255, 255);
         background: linear-gradient(
           90deg,
           rgba(255, 255, 255, 0) 0%,
           rgba(255, 255, 255, 0.5690651260504201) 23%,
           rgba(255, 255, 255, 1) 64%,
           rgba(255, 255, 255, 1) 100%
-        );
+        ); */
       }
 
       .swiper-button-prev::after,
@@ -129,25 +129,16 @@
   import Swiper from "swiper";
   import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation, EffectCoverflow } from "swiper/modules";
+  import { Navigation } from "swiper/modules";
   import "swiper/css/navigation";
   import "swiper/css/effect-coverflow";
 
   // Configurar Swiper
   const swiper = new Swiper(".swiper-video", {
-    modules: [Navigation, EffectCoverflow], // definir los módulos a usar
-    effect: "coverflow",
+    modules: [Navigation], // definir los módulos a usar
     loop: true, // definir si los slides estarán en bucle
     centeredSlides: true,
-    slidesPerView: 3, // agregar número de slides para la pantalla
-    spaceBetween: 40, // separación entre slides en px
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1.5,
-      slideShadows: true,
-    },
+    slidesPerView: 1, // agregar número de slides para la pantalla
     navigation: {
       // definir botones next y prev para el módulo Navigation
       prevEl: ".swiper-video-container .swiper-video .swiper-button-prev",
