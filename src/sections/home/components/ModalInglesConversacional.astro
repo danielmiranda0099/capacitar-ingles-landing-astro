@@ -1,0 +1,77 @@
+---
+import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
+import Modal from "@/components/Modal.astro";
+---
+
+<Modal
+  id="modal-ingles-conversacional"
+  title="Inglés Conversacional"
+  showButton={false}
+  triggerElements={["course-shield-1"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <div class="conversacional-course-content-to-platform">
+    <div class="conversacional-course-content-to-platform-video">
+      <video controls>
+        <source
+          src="/videos/horizontal-propa-3-optimizado.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+
+    <div class="conversacional-course-content-to-platform-cards">
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Basico"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+      />
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Pre-intermedio"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+      />
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Intermedio"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+      />
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Avanzado"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+      />
+    </div>
+  </div>
+</Modal>
+
+<style>
+  .conversacional-course-content-to-platform {
+    display: flex;
+    max-height: 80vh;
+    width: 60vw;
+    gap: 2.5rem;
+
+    & .conversacional-course-content-to-platform-video {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+    & .conversacional-course-content-to-platform-cards {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+  }
+</style>
