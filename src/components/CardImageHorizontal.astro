@@ -4,7 +4,7 @@ interface Props {
   hrefUrl?: string;
   title: string;
   description?: string;
-  classCardContainer?: string;
+  stylesCardContainer?: string;
 }
 
 const {
@@ -12,11 +12,11 @@ const {
   hrefUrl = "#",
   title,
   description,
-  classCardContainer,
+  stylesCardContainer = "",
 } = Astro.props;
 ---
 
-<a class={"card-container " + classCardContainer} href={hrefUrl}>
+<a class="card-container" href={hrefUrl} style={stylesCardContainer}>
   <div class="card-image-container">
     <img src={urlImage} />
   </div>
@@ -40,8 +40,14 @@ const {
     border: 2px solid rgba(255, 255, 255, 1);
     border-radius: 22px;
     overflow: hidden;
-    --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%), 0 4px 4px -2px rgb(16 30 30 / 10%);
-    box-shadow: 0 0 #0000, 0 0 #0000 ,0 0 #0000, 0 0 #0000,var(--tw-shadow);
+    --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%),
+      0 4px 4px -2px rgb(16 30 30 / 10%);
+    box-shadow:
+      0 0 #0000,
+      0 0 #0000,
+      0 0 #0000,
+      0 0 #0000,
+      var(--tw-shadow);
 
     z-index: 1;
     .card-image-container {
