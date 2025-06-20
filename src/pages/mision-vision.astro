@@ -1,0 +1,342 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="mission-vision-section">
+    <div class="container">
+      <!-- Header de la sección -->
+      <div class="section-header">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <!-- Grid de Misión y Visión -->
+      <div class="mission-vision-grid">
+        <!-- Tarjeta de Misión -->
+        <div class="card mission-card">
+          <div class="card-header">
+            <div class="icon-container mission-icon">
+              <svg
+                class="card-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Nuestra Misión</h3>
+          </div>
+
+          <div class="card-content">
+            <p class="card-text">
+              Somos el Instituto de Inglés, Otros Idiomas y Artes "CAPACITAR",
+              oferentes de una propuesta efectiva para enseñar el Inglés con
+              enfoque hacia el Bilingüismo, en dos modalidades: Presencial para
+              niños, jóvenes y adultos de nuestro entorno regional, y Virtual
+              con Clases en Vivo a lo largo y ancho del territorio colombiano y
+              el resto del mundo de países de habla latina.
+            </p>
+            <p class="card-text">
+              Tenemos excelentes recursos humanos, locativos y tecnológicos que
+              garantizan al estudiante alcanzar el dominio del idioma inglés en
+              un curso intensivo de 10 meses o semi-intensivo de 2 años.
+            </p>
+          </div>
+
+          <!-- Imagen decorativa para misión -->
+          <!-- <div class="card-image">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Estudiantes aprendiendo inglés"
+              class="decorative-img"
+            />
+          </div> -->
+        </div>
+
+        <!-- Tarjeta de Visión -->
+        <div class="card vision-card">
+          <div class="card-header">
+            <div class="icon-container vision-icon">
+              <svg
+                class="card-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="card-title">Nuestra Visión</h3>
+          </div>
+
+          <div class="card-content">
+            <p class="card-text">
+              El Instituto de Inglés, Otros Idiomas y Artes "CAPACITAR" será
+              durante la siguiente década el Centro de Idiomas de mayor
+              reconocimiento en los entornos regional, nacional y de países de
+              habla hispana, gracias al gran desempeño bilingüe mostrado a
+              nivel, profesional, laboral y de formación académica por sus
+              estudiantes y egresados.
+            </p>
+            <p class="card-text">
+              Teniendo como referente el Marco Común Europeo, el uso de nuevas
+              tecnologías, y la calidad de sus recursos, acorde con los
+              criterios de globalización y competitividad.
+            </p>
+          </div>
+
+          <!-- Imagen decorativa para visión -->
+          <!-- <div class="card-image">
+            <img
+              src="/placeholder.svg?height=200&width=300"
+              alt="Visión global del instituto"
+              class="decorative-img"
+            />
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  :root {
+    --bg-white: white;
+    --bg-white-100: #f5fbff;
+    --bg-blue-400: #3acaff;
+    --bg-blue-700: #2c3558;
+    --bg-green-400: #80ed99;
+    --color-blue-700: #2c3558;
+  }
+
+  .mission-vision-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(
+      135deg,
+      var(--bg-white) 0%,
+      var(--bg-white-100) 100%
+    );
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-blue-700);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--bg-blue-400) 0%,
+      var(--bg-green-400) 100%
+    );
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  .mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .card {
+    background: var(--bg-white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(44, 53, 88, 0.08);
+    border: 1px solid rgba(44, 53, 88, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(44, 53, 88, 0.12);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .mission-icon {
+    background: linear-gradient(135deg, var(--bg-blue-400), var(--bg-blue-700));
+  }
+
+  .vision-icon {
+    background: linear-gradient(
+      135deg,
+      var(--bg-green-400),
+      var(--bg-blue-700)
+    );
+  }
+
+  .card-icon {
+    width: 28px;
+    height: 28px;
+    color: white;
+    stroke-width: 2.5;
+  }
+
+  .card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-blue-700);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .card-content {
+    margin-bottom: 2rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-blue-700);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .card-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-image {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0.7;
+  }
+
+  .decorative-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: grayscale(20%);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover .decorative-img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  /* Efectos decorativos */
+  .mission-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bg-blue-400), var(--bg-blue-700));
+  }
+
+  .vision-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bg-green-400), var(--bg-blue-700));
+  }
+
+  /* Responsive Design */
+  @media (max-width: 968px) {
+    .mission-vision-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .card {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mission-vision-section {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .card-header {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-container {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 1.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .decorative-img {
+      height: 150px;
+    }
+  }
+</style>
