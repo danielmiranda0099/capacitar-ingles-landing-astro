@@ -1,17 +1,3 @@
-.swiper-button-prev,
-.swiper-button-next {
-  height: 110%;
-  width: 3rem;
-  width: 40%;
-  background-color: transparent;
-}
-.swiper-button-prev {
-  transform: translate(-10%, -25%);
-}
-.swiper-button-next {
-  transform: translate(10%, -25%);
-}
-
 .swiper-button-prev::after,
 .swiper-button-next::after {
   height: 4rem;
