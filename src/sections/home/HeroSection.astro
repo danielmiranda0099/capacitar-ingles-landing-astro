@@ -5,6 +5,7 @@ import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
 import ModalInglesConversacional from "./components/ModalInglesConversacional.astro";
 import ModalInglesForKids from "./components/ModalInglesForKids.astro";
 import ModalVirtualEnglishWithLiveClasses from "./components/ModalVirtualEnglishWithLiveClasses.astro";
+import ModalLiveEnglishWithNativeSpeakers from "./components/ModalLiveEnglishWithNativeSpeakers.astro";
 ---
 
 <section class="hero-section">
@@ -36,8 +37,10 @@ import ModalVirtualEnglishWithLiveClasses from "./components/ModalVirtualEnglish
         <div>
           <CardImageHorizontal
             urlImage="/icons/icon-bilingual-comunity-up-optimizado.webp"
-            title="Frances conversacional"
+            title="Inglés en vivo con nativos."
+            id="card-live-english-with-native-speakers"
           />
+          <ModalLiveEnglishWithNativeSpeakers />
           <CardImageHorizontal
             urlImage="/icons/icono-otros-idiomas-up-optimizado.webp"
             title="Conversación con nativos"
