@@ -10,15 +10,15 @@ import Modal from "@/components/Modal.astro";
   triggerElements={["card-ingles-conversacional"]}
   buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
 >
-  <div class="conversacional-course-content">
+  <div class="course-modal-cards-content">
     <h2>INGLÉS CONVERSACIONAL</h2>
     <p>
       Un curso de inglés completo rápido y efectivo, diseñado para llevarte al
       bilingüismo en 3 ciclos.
     </p>
 
-    <div class="conversacional-course-cards-content">
-      <div class="conversacional-course-item">
+    <div class="course-cards-content">
+      <div class="course-card-item">
         <h3>Conversación cotidiana</h3>
         <p>
           Aprende inglés para situaciones cotidianas reales, con un enfoque
@@ -34,7 +34,7 @@ import Modal from "@/components/Modal.astro";
         </a>
       </div>
 
-      <div class="conversacional-course-item">
+      <div class="course-card-item">
         <h3>Conversación interactiva</h3>
         <p>
           Mejora tu comunicación en inglés en contextos comunes como
@@ -50,7 +50,7 @@ import Modal from "@/components/Modal.astro";
         </a>
       </div>
 
-      <div class="conversacional-course-item">
+      <div class="course-card-item">
         <h3>Conversación fluida</h3>
         <p>
           Expresa ideas con naturalidad y claridad en cualquier situación.
@@ -69,8 +69,8 @@ import Modal from "@/components/Modal.astro";
   </div>
 </Modal>
 
-<style>
-  .conversacional-course-content {
+<style is:global>
+  .course-modal-cards-content {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -89,10 +89,11 @@ import Modal from "@/components/Modal.astro";
       text-align: center;
     }
 
-    & .conversacional-course-cards-content {
+    > .course-cards-content {
       display: flex;
       gap: 1rem;
-      > .conversacional-course-item {
+      > .course-card-item {
+        flex:1;
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
