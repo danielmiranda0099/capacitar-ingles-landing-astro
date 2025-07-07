@@ -1,0 +1,50 @@
+---
+import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
+import Modal from "@/components/Modal.astro";
+---
+
+<Modal
+  id="modal-other-languages"
+  showButton={false}
+  triggerElements={["card-other-languages"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <div class="course-modal-cards-content">
+    <h2>OTROS IDIOMAS:</h2>
+    <p>Expande tus horizontes: aprende francés, portugués u otros idiomas y destaca profesionalmente.</p>
+
+    <div class="course-cards-content">
+      <div class="course-card-item">
+        <h3>Francés conversacional</h3>
+        <p>
+          Da el siguiente paso. Aprende francés desde cero, mejora tu perfil
+          profesional y accede a oportunidades laborales nacionales e
+          internacionales. Hablar solo un idioma ya no es suficiente.
+        </p>
+        <a
+          class="cs-btn cs-bg-green-wh cs-color-white"
+          href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
+          target="_blank"
+        >
+          contactanos <WhatsappIcon className="whatsapp-icon" />
+        </a>
+      </div>
+
+      <div class="course-card-item">
+        <h3>Portugués conversacional</h3>
+        <p>
+          Súmate al reto de ser políglota. Aprende un tercer o cuarto idioma con
+          nuestro curso de portugués, ideal para jóvenes, becas, intercambios y
+          amantes de la cultura brasileña. ¿Estás listo para sumarte al reto de ser políglota?
+        </p>
+        <a
+          class="cs-btn cs-bg-green-wh cs-color-white"
+          href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
+          target="_blank"
+        >
+          contactanos <WhatsappIcon className="whatsapp-icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+</Modal>
