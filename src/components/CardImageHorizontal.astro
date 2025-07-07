@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description?: string;
   stylesCardContainer?: string;
+  id?: string;
 }
 
 const {
@@ -13,10 +14,11 @@ const {
   title,
   description,
   stylesCardContainer = "",
+  id,
 } = Astro.props;
 ---
 
-<a class="card-container" href={hrefUrl} style={stylesCardContainer}>
+<a class="card-container" href={hrefUrl} style={stylesCardContainer} id={id}>
   <div class="card-image-container">
     <img src={urlImage} />
   </div>
