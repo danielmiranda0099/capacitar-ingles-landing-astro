@@ -1,0 +1,47 @@
+---
+import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
+import Modal from "@/components/Modal.astro";
+---
+
+<Modal
+  id="modal-virtual-english-with-live-classes"
+  showButton={false}
+  triggerElements={["card-virtual-english-with-live-classes"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <div class="course-modal-cards-content">
+    <h2>INGLES VIRTUAL CON CLASES EN VIVO.</h2>
+    <p>
+      Aprende inglés virtualmente sin barreras, con docentes expertos y
+      resultados garantizados.
+    </p>
+
+    <div class="course-cards-content">
+      <div class="course-card-item">
+        <p>
+          Clases online en tiempo real con docentes
+          expertos. Aprende desde cualquier lugar, sin contratos ni cláusulas.
+          En 3 semestres o menos, habla inglés con seguridad y sin miedo.
+        </p>
+        <a
+          class="cs-btn cs-bg-green-wh cs-color-white"
+          href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
+          target="_blank"
+        >
+          contactanos <WhatsappIcon className="whatsapp-icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+</Modal>
+
+<style>
+  .course-modal-cards-content {
+    width: 45vw;
+    > .course-cards-content {
+      margin: 0 auto;
+      width: 35%;
+    }
+
+  }
+</style>
