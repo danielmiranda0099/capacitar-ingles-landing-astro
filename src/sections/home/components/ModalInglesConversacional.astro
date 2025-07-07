@@ -1,0 +1,109 @@
+---
+import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
+import Modal from "@/components/Modal.astro";
+---
+
+<Modal
+  id="modal-ingles-conversacional"
+  showButton={false}
+  triggerElements={["card-ingles-conversacional"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <div class="conversacional-course-content">
+    <h2>INGLÉS CONVERSACIONAL</h2>
+    <p>
+      Un curso de inglés completo rápido y efectivo, diseñado para llevarte al
+      bilingüismo en 3 ciclos.
+    </p>
+
+    <div class="conversacional-course-item">
+      <div class="item-ball"></div>
+      <h3>Conversación Cotidiana</h3>
+      <p>
+        Comienza a aprender el inglés con naturalidad. En este nivel adquieres
+        el lenguaje esencial para desenvolverte con confianza en situaciones del
+        día a día: en casa, en el trabajo o en la escuela. Aprenderás a usar el
+        inglés tal como se habla en contextos reales, familiares y cercanos.
+        Ideal para quienes dan sus primeros pasos en la comunicación oral.
+      </p>
+    </div>
+    <div class="conversacional-course-separator"></div>
+    <div class="conversacional-course-item">
+      <div class="item-ball"></div>
+      <h3>Conversación Interactiva</h3>
+      <p>
+        Domina las situaciones comunicativas más comunes en inglés. Desarrolla
+        habilidades para interactuar con seguridad en entrevistas, reuniones
+        laborales, llamadas telefónicas, eventos sociales, juegos y más. Este
+        nivel te prepara para responder con fluidez y precisión en cualquier
+        entorno.
+      </p>
+    </div>
+    <div class="conversacional-course-separator"></div>
+    <div class="conversacional-course-item">
+      <div class="item-ball"></div>
+      <h3>Conversación Fluida</h3>
+      <p>
+        Da el salto al bilingüismo con confianza. En este nivel logras
+        expresarte de forma natural, comprendes con facilidad y generas ideas
+        con soltura. Superas obstáculos como el miedo, la timidez o el bloqueo
+        mental y accedes a una comunicación auténtica, clara y segura en todos
+        los contextos. El resultado es que alcanzas un verdadero dominio del
+        inglés.
+      </p>
+    </div>
+  </div>
+</Modal>
+
+<style>
+  .conversacional-course-content {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 45vw;
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+    & h2 {
+      font-size: 1.5rem;
+      font-family: "Nista";
+      color: var(--color-blue-700);
+    }
+
+    & p {
+      margin-bottom: 1rem;
+    }
+
+    & .conversacional-course-item {
+      position: relative;
+      border-left: 4px solid var(--color-blue-700);
+      padding-left: 1.2rem;
+
+      & .item-ball {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.7rem;
+        height: 1.7rem;
+        transform: translateX(calc(-50% - 2px));
+        border-radius: 50%;
+        background-color: var(--color-blue-700);
+      }
+
+      & h3 {
+        font-size: 1.35rem;
+        font-family: "Nista";
+        color: var(--color-blue-700);
+      }
+
+      /* & p {
+        padding-left: 1rem;
+      } */
+    }
+
+    & .conversacional-course-separator {
+      width: 100%;
+      border-left: 4px solid var(--color-blue-700);
+      height: 1rem;
+    }
+  }
+</style>

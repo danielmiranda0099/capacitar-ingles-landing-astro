@@ -2,11 +2,12 @@
 import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
 import SliderVideoHome from "./components/SliderVideoHome.astro";
 import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
+import ModalInglesConversacional from "./components/ModalInglesConversacional.astro";
 ---
 
 <section class="hero-section">
   <div class="all-courses-container">
-    <h1 class="title cs-text-4xl cs-bold">Encuentra tu curso ideal</h1>
+    <h1 class="title cs-text-3xl cs-bold">Encuentra tu curso ideal</h1>
 
     <div class="content-courses-info">
       <div class="cards-container">
@@ -14,7 +15,9 @@ import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
           <CardImageHorizontal
             urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
             title="Ingles conversacional"
+            id="card-ingles-conversacional"
           />
+          <ModalInglesConversacional />
           <CardImageHorizontal
             urlImage="/icons/icono-ingles-para-ninos-up-optimizado.webp"
             title="Ingles para niños"
