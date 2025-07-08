@@ -52,6 +52,8 @@ a {
   font-size: inherit;
   font-weight: inherit;
   color: var(--color-blue-700);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 p,
