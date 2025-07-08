@@ -99,6 +99,7 @@ const { src, poster, type = "video/mp4" } = Astro.props;
 
       if (video && playPauseButton) {
         // Initial state: If video hasn't loaded or is paused, show the button
+        video.volume = 0.4; // Set initial volume
         video.addEventListener("loadeddata", () => {
           if (video.paused) {
             playPauseButton.classList.add("show", "pulsing");
