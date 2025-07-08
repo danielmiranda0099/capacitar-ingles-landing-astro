@@ -33,8 +33,7 @@ body {
   overflow-x: hidden;
   line-height: inherit;
   min-height: 100dvh;
-
-  color: var(--color-blue-700);
+  color: var(--color-blue-600);
   background-color: var(--bg-white);
 }
 
@@ -52,6 +51,7 @@ a {
   text-wrap: balance;
   font-size: inherit;
   font-weight: inherit;
+  color: var(--color-blue-700);
 }
 
 p,
@@ -67,7 +67,6 @@ hr {
 }
 
 a {
-  color: inherit;
   text-decoration: inherit;
   background-color: transparent;
 }
@@ -126,8 +125,6 @@ table {
   border-color: inherit;
   border-collapse: collapse;
 }
-
-
 
 button,
 input,
@@ -234,7 +231,6 @@ template,
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-
 
 :-moz-focusring {
   outline: auto;
