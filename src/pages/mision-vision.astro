@@ -1,19 +1,18 @@
 ---
+import Divider from "@/components/Divider.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
   <section class="mission-vision-section">
     <div class="container">
-      <!-- Header de la sección -->
       <div class="section-header">
-        <h2 class="section-title">Quiénes Somos</h2>
-        <div class="title-divider"></div>
+        <Divider />
+        <h2 class="section-title">¿Quiénes somos?</h2>
+        <Divider />
       </div>
 
-      <!-- Grid de Misión y Visión -->
       <div class="mission-vision-grid">
-        <!-- Tarjeta de Misión -->
         <div class="card mission-card">
           <div class="card-header">
             <div class="icon-container mission-icon">
@@ -91,15 +90,6 @@ import Layout from "@/layouts/Layout.astro";
               criterios de globalización y competitividad.
             </p>
           </div>
-
-          <!-- Imagen decorativa para visión -->
-          <!-- <div class="card-image">
-            <img
-              src="/placeholder.svg?height=200&width=300"
-              alt="Visión global del instituto"
-              class="decorative-img"
-            />
-          </div> -->
         </div>
       </div>
     </div>
@@ -107,23 +97,9 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 
 <style>
-  :root {
-    --bg-white: white;
-    --bg-white-100: #f5fbff;
-    --bg-blue-400: #3acaff;
-    --bg-blue-700: #2c3558;
-    --bg-green-400: #80ed99;
-    --color-blue-700: #2c3558;
-  }
-
   .mission-vision-section {
-    padding: 5rem 2rem;
-    background: linear-gradient(
-      135deg,
-      var(--bg-white) 0%,
-      var(--bg-white-100) 100%
-    );
-    min-height: 100vh;
+    padding: 2rem 2rem;
+    min-height: 85vh;
   }
 
   .container {
@@ -132,28 +108,20 @@ import Layout from "@/layouts/Layout.astro";
   }
 
   .section-header {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
   }
 
   .section-title {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    color: var(--color-blue-700);
     margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-  }
-
-  .title-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(
-      90deg,
-      var(--bg-blue-400) 0%,
-      var(--bg-green-400) 100%
-    );
-    margin: 0 auto;
-    border-radius: 2px;
   }
 
   .mission-vision-grid {
@@ -166,7 +134,7 @@ import Layout from "@/layouts/Layout.astro";
   .card {
     background: var(--bg-white);
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 1.5rem;
     box-shadow: 0 10px 40px rgba(44, 53, 88, 0.08);
     border: 1px solid rgba(44, 53, 88, 0.05);
     transition: all 0.3s ease;
@@ -174,25 +142,20 @@ import Layout from "@/layouts/Layout.astro";
     overflow: hidden;
   }
 
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(44, 53, 88, 0.12);
-  }
-
   .card-header {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .icon-container {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     flex-shrink: 0;
   }
 
@@ -204,7 +167,7 @@ import Layout from "@/layouts/Layout.astro";
     background: linear-gradient(
       135deg,
       var(--bg-green-400),
-      var(--bg-blue-700)
+      var(--bg-green-700)
     );
   }
 
@@ -216,69 +179,31 @@ import Layout from "@/layouts/Layout.astro";
   }
 
   .card-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-blue-700);
     margin: 0;
-    line-height: 1.3;
-  }
-
-  .card-content {
-    margin-bottom: 2rem;
   }
 
   .card-text {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
     color: var(--color-blue-700);
     margin-bottom: 1.5rem;
     opacity: 0.9;
   }
 
-  .card-text:last-child {
-    margin-bottom: 0;
-  }
-
-  .card-image {
-    margin-top: 2rem;
-    border-radius: 12px;
-    overflow: hidden;
-    opacity: 0.7;
-  }
-
-  .decorative-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    filter: grayscale(20%);
-    transition: all 0.3s ease;
-  }
-
-  .card:hover .decorative-img {
-    filter: grayscale(0%);
-    opacity: 1;
-  }
-
   /* Efectos decorativos */
-  .mission-card::before {
+  .mission-card::before, .vision-card::before  {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--bg-blue-400), var(--bg-blue-700));
+    background: linear-gradient(90deg, var(--bg-blue-400), var(--bg-green-400));
   }
 
   .vision-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--bg-green-400), var(--bg-blue-700));
+    background: linear-gradient(90deg, var(--bg-green-400), var(--bg-blue-400));
   }
 
   /* Responsive Design */
