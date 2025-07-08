@@ -8,6 +8,7 @@ import ModalVirtualEnglishWithLiveClasses from "./components/ModalVirtualEnglish
 import ModalLiveEnglishWithNativeSpeakers from "./components/ModalLiveEnglishWithNativeSpeakers.astro";
 import ModalOtherLanguages from "./components/ModalOtherLanguages.astro";
 import ModalArts from "./components/ModalArts.astro";
+import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astro";
 ---
 
 <section class="hero-section">
@@ -58,13 +59,16 @@ import ModalArts from "./components/ModalArts.astro";
         </div>
       </div>
 
-      <div>
+      <div class="buttons-call-to-action-container">
         <a
           class="cs-btn cs-bg-green-wh cs-color-white"
           href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
           target="_blank"
         >
           whatsapp <WhatsappIcon className="whatsapp-icon" /></a
+        >
+        <a class="cs-btn button-inscription light" href="#"
+          >Cursos gratis <MousePointerClickIcon /></a
         >
       </div>
     </div>
@@ -81,46 +85,195 @@ import ModalArts from "./components/ModalArts.astro";
     gap: 2rem;
     max-width: 150ch;
     margin: 0 auto;
-    margin-bottom: var(--size-2);
+    margin-bottom: var(--size-4);
     /* background-color: red; */
-  }
 
-  .all-courses-container {
-    width: 60%;
-    display: flex;
-    height: fit-content;
-    gap: 1rem;
-    flex-direction: column;
-    justify-items: start;
-    padding-top: 3rem;
-
-    & .title {
-      font-family: "Nista", "Times New Roman", Times, serif;
-      font-weight: 900;
-    }
-    & span {
-      margin-bottom: -0.8rem;
-      font-family: "Nista", "Times New Roman", Times, serif;
-      font-weight: 900;
-    }
-    & p {
-      font-weight: 500;
-    }
-    & .content-courses-info {
+    > .all-courses-container {
+      width: 60%;
       display: flex;
-      flex-direction: column;
+      height: fit-content;
       gap: 1rem;
-      & .cards-container {
+      flex-direction: column;
+      justify-items: start;
+      padding-top: 3rem;
+
+      & .title {
+        font-family: "Nista", "Times New Roman", Times, serif;
+        font-weight: 900;
+      }
+      & span {
+        margin-bottom: -0.8rem;
+        font-family: "Nista", "Times New Roman", Times, serif;
+        font-weight: 900;
+      }
+      & p {
+        font-weight: 500;
+      }
+      > .content-courses-info {
         display: flex;
+        flex-direction: column;
         gap: 1rem;
+        & .cards-container {
+          display: flex;
+          gap: 1rem;
+        }
+        > .buttons-call-to-action-container {
+          display: flex;
+          gap: 1rem;
+          /* > .button-inscription {
+            color: white;
+            font-weight: 700;
+            background: rgb(58, 202, 255);
+            background: linear-gradient(
+              28deg,
+              rgba(58, 202, 255, 0.7) 30%,
+              rgba(128, 237, 153, 0.9) 100%
+            );
+            
+            border: 3px solid #0000;
+            background: linear-gradient(#3acaff) padding-box, linear-gradient(
+                  var(--angle),
+                  #fff 60%,
+                  rgb(80, 223, 114) 100%
+                ) border-box;
+            animation: 3s rotate linear infinite;
+          } */
+        }
+        .buttons-call-to-action-container > .button-inscription {
+          color: white;
+          font-weight: 700;
+          /* Estilos para el borde animado */
+          background: rgb(58, 202, 255);
+          background: linear-gradient(
+            28deg,
+            rgba(58, 202, 255, 0.7) 30%,
+            rgba(128, 237, 153, 0.9) 100%
+          );
+
+          border: 3px solid #0000;
+          background:
+            linear-gradient(#3acaff) padding-box,
+            linear-gradient(var(--angle), #fff 60%, rgb(80, 223, 114) 100%)
+              border-box;
+          animation: 3s rotate linear infinite;
+          position: relative; /* Necesario para posicionar el pseudo-elemento */
+
+          z-index: 1; /* Asegura que el botón esté por encima del contenedor */
+        }
+        /* Pseudo-elemento para el efecto shiner */
+        .buttons-call-to-action-container > .button-inscription::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2; /* Para que el shiner esté encima del fondo del botón pero debajo del texto si es necesario */
+
+          /* Estilos del shiner */
+          background: -moz-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          background: -webkit-gradient(
+            linear,
+            left top,
+            right bottom,
+            color-stop(0%, rgba(255, 255, 255, 0)),
+            color-stop(40%, rgba(255, 255, 255, 0)),
+            color-stop(50%, rgba(255, 255, 255, 0.8)),
+            color-stop(60%, rgba(255, 255, 255, 0)),
+            color-stop(100%, rgba(255, 255, 255, 0))
+          );
+          background: -webkit-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          background: -o-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          background: -ms-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* Ajusta el filtro para la transparencia */
+
+          background-repeat: no-repeat;
+          background-position: -300px 0; /* Comienza el shiner fuera de la vista */
+          background-size: 300%;
+          animation:
+            light 4s infinite alternate,
+            shine-delay 4s forwards; /* Combinamos animaciones */
+          /* Para controlar el retraso de inicio de la animación `light` */
+          animation-delay: 0s, 2s; /* El primer valor es para `light`, el segundo para `shine-delay` */
+          /* animation-iteration-count: infinite;  Ya incluido en la shorthand animation */
+          /* animation-direction: alternate; Ya incluido en la shorthand animation */
+        }
       }
     }
+
+    .slider-video-container {
+      width: 40%;
+    }
   }
 
-  .slider-video-container {
-    width: 40%;
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
   }
 
-  .whatsapp-icon {
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  /* Keyframes para el efecto shiner */
+  @keyframes light {
+    0% {
+      background-position: -600px 0;
+    }
+    100% {
+      background-position: 600px 0; /* Ajustado para que el brillo atraviese completamente el botón */
+    }
+  }
+
+  /* Un keyframe para controlar el delay de la animación light, si quieres que inicie con un delay */
+  @keyframes shine-delay {
+    0% {
+      opacity: 0; /* Invisible al principio */
+    }
+    99% {
+      opacity: 0; /* Mantiene la invisibilidad casi hasta el final del retraso */
+    }
+    100% {
+      opacity: 1; /* Se vuelve visible justo antes de que `light` empiece */
+    }
   }
 </style>
