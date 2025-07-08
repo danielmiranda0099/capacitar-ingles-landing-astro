@@ -60,6 +60,7 @@ p,
 li,
 span {
   text-wrap: pretty;
+  line-height: 1.5;
 }
 
 hr {
