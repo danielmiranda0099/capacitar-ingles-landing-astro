@@ -1,0 +1,23 @@
+---
+interface Props {
+  width?: string;
+  height?: string;
+}
+
+const { width = "40px", height = "4px" } = Astro.props;
+---
+
+<div class="title-divider" style=`width: ${width}; height: ${height};`></div>
+
+<style>
+  .title-divider {
+    display: inline-flex;
+    background: linear-gradient(
+      90deg,
+      var(--bg-blue-400) 0%,
+      var(--bg-green-400) 100%
+    );
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+</style>
