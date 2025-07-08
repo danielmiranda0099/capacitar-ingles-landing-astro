@@ -1,0 +1,155 @@
+---
+interface Props {
+  src: string;
+  poster?: string;
+  type?: string;
+}
+
+const { src, poster, type = "video/mp4" } = Astro.props;
+---
+
+<div class="video-container">
+  <video class="my-video" controls {poster}>
+    <source src={src} type={type} />
+  </video>
+  <button class="play-pause-button" aria-label="Play/Pause Video">
+    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  </button>
+</div>
+
+<style>
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-container video {
+    width: 100%;
+    display: block;
+  }
+
+  .play-pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 80px; /* Size of the button */
+    height: 80px; /* Size of the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+    padding: 0; /* Remove default button padding */
+  }
+
+  .play-pause-button.show {
+    opacity: 1;
+  }
+
+  .play-pause-button.pulsing .play-icon {
+    animation: pulse 1.5s infinite;
+  }
+
+  .play-icon {
+    color: white;
+    width: 40px; /* Size of the icon */
+    height: 40px; /* Size of the icon */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all video containers on the page
+    const videoContainers = document.querySelectorAll(".video-container");
+
+    videoContainers.forEach((container) => {
+      const video = container.querySelector(
+        ".my-video"
+      ) as HTMLVideoElement | null;
+      const playPauseButton = container.querySelector(
+        ".play-pause-button"
+      ) as HTMLButtonElement | null;
+
+      if (video && playPauseButton) {
+        // Initial state: If video hasn't loaded or is paused, show the button
+        video.addEventListener("loadeddata", () => {
+          if (video.paused) {
+            playPauseButton.classList.add("show", "pulsing");
+          }
+        });
+
+        video.addEventListener("pause", () => {
+          playPauseButton.classList.add("show", "pulsing");
+        });
+
+        video.addEventListener("play", () => {
+          playPauseButton.classList.remove("show", "pulsing");
+        });
+
+        // Toggle play/pause when the button is clicked
+        playPauseButton.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+
+        // Hide the button when the video is playing but show if controls are hovered (optional)
+        video.addEventListener("mouseover", () => {
+          if (video.paused) {
+            playPauseButton.classList.add("show");
+          }
+        });
+
+        video.addEventListener("mouseout", () => {
+          if (video.paused && !playPauseButton.matches(":hover")) {
+            // Keep it shown if paused and not hovering the button itself
+          } else if (!video.paused) {
+            playPauseButton.classList.remove("show");
+          }
+        });
+
+        // Handle click on the video itself to play/pause
+        video.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      } else {
+        console.warn(
+          "Video or play/pause button element not found within a video container."
+        );
+      }
+    });
+  });
+</script>

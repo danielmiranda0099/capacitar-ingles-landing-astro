@@ -1,33 +1,27 @@
 ---
-
+import VideoPlayer from "@/components/VideoPlayer.astro";
 ---
 
 <!-- Swiper -->
 <div class="swiper swiper-video-home">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <video controls poster="poster-horizontal.png">
-        <source
-          src="/videos/horizontal-propa-1-optimizado.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <VideoPlayer
+        src="/videos/horizontal-propa-1-optimizado.mp4"
+        poster="poster-propa-1-horizontal.png"
+      />
     </div>
     <div class="swiper-slide">
-      <video controls poster="poster-horizontal.png">
-        <source
-          src="/videos/horizontal-propa-2-optimizado.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <VideoPlayer
+        src="/videos/horizontal-propa-2-optimizado.mp4"
+        poster="poster-propa-2-horizontal.png"
+      />
     </div>
     <div class="swiper-slide">
-      <video controls poster="poster-horizontal.png">
-        <source
-          src="/videos/horizontal-propa-3-optimizado.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <VideoPlayer
+        src="/videos/horizontal-propa-3-optimizado.mp4"
+        poster="poster-propa-3-horizontal.png"
+      />
     </div>
   </div>
   <div class="swiper-button-next"></div>
@@ -55,7 +49,6 @@
           object-fit: cover;
           & source {
             width: 100% !important;
-            
           }
         }
       }
