@@ -93,19 +93,19 @@ import Modal from "@/components/Modal.astro";
       display: flex;
       gap: 1rem;
       > .course-card-item {
-        flex:1;
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
         position: relative;
         padding: 0.7rem 0.7rem;
+        padding-top: 1.2rem;
         background: rgba(255, 255, 255, 0.7);
         background-color: rgba(241, 255, 247, 0.2);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border-radius: 10px;
+        border-radius: 12px;
         border: 2px solid rgba(255, 255, 255, 1);
-        border-radius: 22px;
         overflow: hidden;
         --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%),
           0 2px 7px 0 rgb(16 30 30 / 15%), 0 4px 4px -2px rgb(16 30 30 / 10%);
@@ -121,6 +121,20 @@ import Modal from "@/components/Modal.astro";
           font-family: "Nista";
           color: var(--color-blue-700);
         }
+      }
+
+      > .course-card-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--bg-blue-400),
+          var(--bg-green-400)
+        );
       }
     }
   }
