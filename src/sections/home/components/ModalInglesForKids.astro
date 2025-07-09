@@ -18,7 +18,10 @@ import Modal from "@/components/Modal.astro";
 
     <div class="course-cards-content">
       <div class="course-card-item">
-        <h3>Jardín bilingüe (5 a 6 años de edad)</h3>
+        <div class="card-header">
+          <h3>Jardín bilingüe</h3>
+          <span>(5 a 6 años de edad)</span>
+        </div>
         <p>
           Curso lúdico e inmersivo donde los niños aprenden inglés escuchando y
           jugando. Desarrollan comprensión auditiva y aprenden de forma natural,
@@ -34,7 +37,10 @@ import Modal from "@/components/Modal.astro";
       </div>
 
       <div class="course-card-item">
-        <h3>Club de niños bilingües (7 a 9 años)</h3>
+        <div class="card-header">
+          <h3>Club de niños bilingües</h3>
+          <span>(7 a 9 años de edad)</span>
+        </div>
         <p>
           Los niños amplían vocabulario, practican pronunciación y aprenden a
           expresarse en situaciones cotidianas. Objetivo: iniciar la producción
@@ -50,7 +56,10 @@ import Modal from "@/components/Modal.astro";
       </div>
 
       <div class="course-card-item">
-        <h3>Conversación para Niños (10 a 12 años)</h3>
+        <div class="card-header">
+          <h3>Conversación para Niños</h3>
+          <span>(10 a 12 años de edad)</span>
+        </div>
         <p>
           Refuerzan la fluidez, piensan en inglés y se comunican con confianza.
           Objetivo: desarrollar pensamiento bilingüe y expresión oral natural,
@@ -67,3 +76,21 @@ import Modal from "@/components/Modal.astro";
     </div>
   </div>
 </Modal>
+
+<style>
+  .course-cards-content {
+    > .course-card-item {
+      > .card-header {
+        & h3 {
+          font-family: "Nista";
+          font-size: 1.2rem;
+          font-weight: 900;
+        }
+
+        & span {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+</style>
