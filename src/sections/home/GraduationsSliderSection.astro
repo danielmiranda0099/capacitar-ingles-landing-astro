@@ -1,8 +1,15 @@
+---
+import Divider from "@/components/Divider.astro";
+---
+
 <section class="graduations-slider-section">
   <div class="swiper swiper-graduations">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <h2 class="cs-text-2xl">Promoción 2022</h2>
+        <div class="title-container">
+          <h2 class="cs-text-3xl">Promoción 2022</h2>
+          <Divider width="120px" />
+        </div>
         <div class="vento-grid-images-graduations-container">
           <div id="vento-grid-image-item-0" class="grid-item-vertical">
             <img
@@ -27,7 +34,10 @@
         </div>
       </div>
       <div class="swiper-slide">
-        <h2 class="cs-text-2xl">Promoción 2023</h2>
+        <div class="title-container">
+          <h2 class="cs-text-3xl">Promoción 2023</h2>
+          <Divider width="120px" />
+        </div>
         <div class="vento-grid-images-graduations-container">
           <div id="vento-grid-image-item-0" class="grid-item-vertical">
             <img
@@ -52,7 +62,10 @@
         </div>
       </div>
       <div class="swiper-slide">
-        <h2 class="cs-text-2xl">Promoción 2024</h2>
+        <div class="title-container">
+          <h2 class="cs-text-3xl">Promoción 2024</h2>
+          <Divider width="120px" />
+        </div>
         <div class="vento-grid-images-graduations-container">
           <div id="vento-grid-image-item-0" class="grid-item-vertical">
             <img
@@ -84,9 +97,20 @@
 
 <style>
   .graduations-slider-section {
-    max-width: 90ch;
+    max-width: 120ch;
     margin: 0 auto;
-    margin-bottom: var(--size-2);;
+    margin-bottom: var(--size-4);
+  }
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    > h2 {
+      font-weight: 700;
+    }
   }
   .vento-grid-images-graduations-container {
     width: 100%;

@@ -9,11 +9,15 @@ import ModalLiveEnglishWithNativeSpeakers from "./components/ModalLiveEnglishWit
 import ModalOtherLanguages from "./components/ModalOtherLanguages.astro";
 import ModalArts from "./components/ModalArts.astro";
 import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astro";
+import Divider from "@/components/Divider.astro";
 ---
 
 <section class="hero-section">
   <div class="all-courses-container">
-    <h1 class="title cs-text-3xl cs-bold">Cursos</h1>
+    <div class="title-container">
+      <h1 class="title cs-text-3xl cs-bold">Cursos</h1>
+      <Divider width="90px" />
+    </div>
 
     <div class="content-courses-info">
       <div class="cards-container">
@@ -97,8 +101,16 @@ import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astr
       justify-items: start;
       padding-top: 3rem;
 
-      & .title {
-        
+      > .title-container {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.2rem;
+        > .title {
+         
+        }
       }
       & span {
         margin-bottom: -0.8rem;

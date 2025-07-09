@@ -1,12 +1,14 @@
 ---
+import Divider from "@/components/Divider.astro";
 import ModalPlatformInglesConversacional from "./components/ModalPlatformInglesConversacional.astro";
 import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astro";
 ---
 
 <section class="get-in-to-section">
-  <h2 class="title-section cs-text-3xl">
-    Acceso a Cursos
-  </h2>
+  <div class="title-container">
+    <h2 class="title-section cs-text-3xl">Acceso a Cursos</h2>
+    <Divider width="60px" />
+  </div>
 
   <div class="shields-container">
     <div class="course-shield" id="course-shield-1">
@@ -48,9 +50,17 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
     margin: 0 auto;
     margin-bottom: 5rem;
 
-    .title-section {
-      font-weight: 600;
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
       margin-bottom: 1rem;
+      > .title-section {
+        
+        font-weight: 600;
+      }
     }
 
     & .shields-container {
