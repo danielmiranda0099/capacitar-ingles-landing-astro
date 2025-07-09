@@ -8,17 +8,19 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
     <a href="/" class="logo-container">
       <img src="/logo.png" />
       <div class="slogan">
-        <h2 class="cs-text-3xl cs-bold">
+        <h2 class="cs-text-3xl cs-bold">CAPACITAR</h2>
+        <span class="cs-bold">
           Instituto de Inglés, otros Idiomas y Artes
-        </h2>
-        <h2 class="cs-text-2xl cs-bold">CAPACITAR</h2>
+        </span>
       </div>
     </a>
     <div class="options-container">
       <a href="/">Inicio</a>
       <a href="/mision-vision">Misión/visión</a>
       <a href="/">Metodologia</a>
-      <a class="cs-btn button-inscription" href="#">Inscribete aquí <MousePointerClickIcon /></a>
+      <a class="cs-btn button-inscription" href="#"
+        >Inscribete aquí <MousePointerClickIcon /></a
+      >
       <!-- <MenuIcon /> -->
     </div>
   </div>
@@ -40,7 +42,6 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    
 
     .logo-container {
       display: flex;
@@ -55,9 +56,8 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
         display: flex;
         flex-direction: column;
 
-        h2 {
-          font-family: "Nista", "Times New Roman", Times, serif;
-          font-weight: 900;
+        span {
+          font-size: 1.25rem;
         }
       }
     }
