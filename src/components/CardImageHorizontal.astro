@@ -18,7 +18,13 @@ const {
 } = Astro.props;
 ---
 
-<a class="card-container" href={hrefUrl} style={stylesCardContainer} id={id} target="_blank">
+<a
+  class="card-container"
+  href={hrefUrl}
+  style={stylesCardContainer}
+  id={id}
+  target={hrefUrl === "#" ? "" : "_blank"}
+>
   <div class="card-image-container">
     <img src={urlImage} />
   </div>
