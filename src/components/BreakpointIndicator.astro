@@ -22,12 +22,12 @@
 <script>
   function getBreakpoint() {
     const width = window.innerWidth;
-    if (width <= 480) return '1 <= 480';
-    if (width <= 576) return '2 <= 576';
-    if (width <= 768) return '3 <= 768';
-    if (width <= 1024) return '4 <= 1024';
-    if (width <= 1400) return '5 <= 1400';
-    return '6 > 1400';
+    if (width <= 480) return `1 - ${width} <= 480`;
+    if (width <= 576) return `2 - ${width} <= 576`;
+    if (width <= 768) return `3 - ${width} <= 768`;
+    if (width <= 1024) return `4 - ${width} <= 1024`;
+    if (width <= 1400) return `5 - ${width} <= 1400`;
+    return `6 - ${width} > 1400`;
   }
 
   function updateIndicator() {
