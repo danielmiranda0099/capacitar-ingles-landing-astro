@@ -127,14 +127,6 @@ Algunos fabricantes de fuentes también incluyen:
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Nista";
-  src: url("/fonts/NistaBlack.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 /**************************************************************************/
 /************************** BACKGROUNS ************************************/
 .cs-bg-blue-400 {
