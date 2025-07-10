@@ -4,7 +4,7 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
 ---
 
 <header>
-  <div class="header">
+  <div class="section-container header">
     <a href="/" class="logo-container">
       <img src="/logo.png" />
       <div class="slogan">
@@ -30,13 +30,12 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
     background-color: var(--bg-white);
     box-shadow: 0 4px 56px 0px rgba(58, 62, 66, 0.1);
     z-index: 999;
+    margin-bottom: 0;
   }
   .header {
-    display: flex;
-    height: 90px;
-    max-width: 180ch;
-    padding: 1rem 0;
-    margin: 0 auto;
+    margin-bottom: 0;
+    height: 5.1rem;
+    padding: 0.5rem 0;
     justify-content: space-between;
     align-items: center;
 
@@ -46,7 +45,7 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
       gap: 1rem;
       height: 100%;
       img {
-        height: 140%;
+        height: 100%;
       }
 
       .slogan {
