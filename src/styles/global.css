@@ -1,3 +1,46 @@
+@media screen and (width > 1400px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media screen and (width <= 1400px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media screen and (width <= 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width <= 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (width <= 576px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (width <= 480px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+.section-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 85vw;
+  margin: 0 auto;
+  margin-bottom: var(--size-3);
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
   height: 4rem;
@@ -11,8 +54,8 @@
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(4px);
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .swiper-button-prev::after {

@@ -1,6 +1,4 @@
 :root {
-  font-size: 16px;
-
   /**************************************************************************/
   /************************** BACKGROUNS ************************************/
   --bg-white: white;
@@ -111,6 +109,20 @@ Algunos fabricantes de fuentes también incluyen:
   font-family: "Inter";
   src: url("/fonts/Inter-Bold.otf") format("opentype");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Black.otf") format("opentype");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
