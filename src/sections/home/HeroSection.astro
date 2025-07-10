@@ -12,7 +12,7 @@ import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astr
 import Divider from "@/components/Divider.astro";
 ---
 
-<section class="hero-section">
+<section class="section-container hero-section">
   <div class="all-courses-container">
     <div class="title-container">
       <h1 class="title cs-text-3xl cs-bold">Cursos</h1>
@@ -85,21 +85,14 @@ import Divider from "@/components/Divider.astro";
 
 <style>
   .hero-section {
-    display: flex;
-    gap: 2rem;
-    max-width: 150ch;
-    margin: 0 auto;
-    margin-bottom: var(--size-4);
-    /* background-color: red; */
-
+    margin-top: 1rem;
     > .all-courses-container {
-      width: 60%;
+      width: 50%;
       display: flex;
       height: fit-content;
       gap: 1rem;
       flex-direction: column;
       justify-items: start;
-      padding-top: 3rem;
 
       > .title-container {
         width: fit-content;
