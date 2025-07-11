@@ -100,7 +100,7 @@ import Divider from "@/components/Divider.astro";
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     gap: 0.4rem;
     margin-bottom: 1rem;
     > h2 {
@@ -156,6 +156,21 @@ import Divider from "@/components/Divider.astro";
 
     grid-row-end: 5;
     grid-column-end: 7;
+  }
+
+  @media (width <= 800px) {
+    .vento-grid-images-graduations-container {
+      height: 50vh;
+    }
+  }
+
+  @media (width <= 500px) {
+    .graduations-slider-section {
+      width: 95%;
+    }
+    .vento-grid-images-graduations-container {
+      height: 35vh;
+    }
   }
 </style>
 
