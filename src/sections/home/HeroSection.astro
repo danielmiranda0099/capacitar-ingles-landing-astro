@@ -16,41 +16,41 @@ import Divider from "@/components/Divider.astro";
   <div class="all-courses-container">
     <div class="title-container">
       <h1 class="title cs-text-3xl cs-bold">Cursos</h1>
-      <Divider width="90px" />
+      <Divider width="6rem" />
     </div>
 
     <div class="content-courses-info">
       <div class="cards-container">
-        <div>
+        <div class="cards-column-container">
           <CardImageHorizontal
             urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
-            title="Ingles conversacional"
+            title="Ingles Conversacional"
             id="card-ingles-conversacional"
           />
           <ModalInglesConversacional />
           <CardImageHorizontal
             urlImage="/icons/icono-ingles-para-ninos-up-optimizado.webp"
-            title="Ingles para niños"
+            title="Ingles para Niños"
             id="card-ingles-for-kids"
           />
           <ModalInglesForKids />
           <CardImageHorizontal
             urlImage="https://cdn-icons-png.flaticon.com/512/5388/5388630.png"
-            title="Ingles virtual con clases en vivo"
+            title="Ingles Virtual con Clases en Vivo"
             id="card-virtual-english-with-live-classes"
           />
           <ModalVirtualEnglishWithLiveClasses />
         </div>
-        <div>
+        <div class="cards-column-container">
           <CardImageHorizontal
             urlImage="/icons/icon-bilingual-comunity-up-optimizado.webp"
-            title="Inglés en vivo con nativos"
+            title="Inglés en Vivo con Nativos"
             id="card-live-english-with-native-speakers"
           />
           <ModalLiveEnglishWithNativeSpeakers />
           <CardImageHorizontal
             urlImage="/icons/icono-otros-idiomas-up-optimizado.webp"
-            title="Otros idiomas"
+            title="Otros Idiomas"
             id="card-other-languages"
           />
           <ModalOtherLanguages />
@@ -69,10 +69,10 @@ import Divider from "@/components/Divider.astro";
           href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
           target="_blank"
         >
-          whatsapp <WhatsappIcon className="whatsapp-icon" /></a
+          Whatsapp <WhatsappIcon className="whatsapp-icon" /></a
         >
         <a class="cs-btn button-inscription light" href="#"
-          >Cursos gratis <MousePointerClickIcon /></a
+          >Cursos Gratis <MousePointerClickIcon /></a
         >
       </div>
     </div>
@@ -103,7 +103,6 @@ import Divider from "@/components/Divider.astro";
         align-items: flex-start;
         gap: 0.2rem;
         > .title {
-         
         }
       }
       & span {
@@ -120,6 +119,11 @@ import Divider from "@/components/Divider.astro";
         & .cards-container {
           display: flex;
           gap: 1rem;
+          > .cards-column-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
         }
         > .buttons-call-to-action-container {
           display: flex;
@@ -279,6 +283,67 @@ import Divider from "@/components/Divider.astro";
     }
     100% {
       opacity: 1; /* Se vuelve visible justo antes de que `light` empiece */
+    }
+  }
+
+  @media (width < 1080px) {
+    .hero-section {
+      gap: 0;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      width: 95vw;
+      margin-bottom: 2rem;
+    }
+  }
+  @media (width <= 800px) {
+    .hero-section {
+      gap: 1rem;
+      flex-direction: column;
+      > .all-courses-container {
+        width: 100%;
+        align-items: center;
+        > .title-container {
+          align-items: center;
+          justify-content: center;
+          > .title {
+            text-align: center;
+          }
+        }
+        > .content-courses-info {
+          gap: 1rem;
+          & .cards-container {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      .slider-video-container {
+        width: 75%;
+      }
+    }
+  }
+
+  @media (width <= 576px) {
+    .hero-section {
+      gap: 2rem;
+      > .all-courses-container {
+        > .title-container {
+          > .title {
+          }
+        }
+        > .content-courses-info {
+          gap: 2rem;
+          & .cards-container {
+            > .cards-column-container {
+              gap: 2rem;
+            }
+          }
+        }
+      }
+      .slider-video-container {
+        width: 95%;
+      }
     }
   }
 </style>
