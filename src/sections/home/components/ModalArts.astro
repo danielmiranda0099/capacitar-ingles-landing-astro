@@ -39,10 +39,21 @@ import Modal from "@/components/Modal.astro";
 
 <style>
   .course-modal-cards-content {
-    width: 45vw;
     > .course-cards-content {
       margin: 0 auto;
-      width: 45%;
+      > .course-card-item {
+        width: 35ch;
+      }
+    }
+  }
+
+  @media (width <= 576px) {
+    .course-modal-cards-content {
+      > .course-cards-content {
+        > .course-card-item {
+          width: 100%;
+        }
+      }
     }
   }
 </style>

@@ -138,4 +138,34 @@ import Modal from "@/components/Modal.astro";
       }
     }
   }
+
+  @media (width <= 1600px) {
+    .course-modal-cards-content {
+      width: 70vw;
+    }
+  }
+  @media (width <= 800px) {
+    .course-modal-cards-content {
+      width: 85vw;
+    }
+  }
+  @media (width <= 800px) {
+    .course-modal-cards-content {
+      > .course-cards-content {
+        flex-direction: column;
+        > .course-card-item {
+          > h3 {
+          }
+        }
+
+        > .course-card-item::before {
+        }
+      }
+    }
+  }
+  @media (width <= 576px) {
+    .course-modal-cards-content {
+      width: 92vw;
+    }
+  }
 </style>

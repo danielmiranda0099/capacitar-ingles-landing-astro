@@ -19,16 +19,16 @@ import Modal from "@/components/Modal.astro";
     <div class="course-cards-content">
       <div class="course-card-item">
         <p>
-          Clases online en tiempo real con docentes
-          expertos. Aprende desde cualquier lugar, sin contratos ni cláusulas.
-          En 3 semestres o menos, habla inglés con seguridad y sin miedo.
+          Clases online en tiempo real con docentes expertos. Aprende desde
+          cualquier lugar, sin contratos ni cláusulas. En 3 semestres o menos,
+          habla inglés con seguridad y sin miedo.
         </p>
         <a
           class="cs-btn cs-bg-green-wh cs-color-white"
           href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
           target="_blank"
         >
-          contactanos <WhatsappIcon className="whatsapp-icon" />
+          Contactanos <WhatsappIcon className="whatsapp-icon" />
         </a>
       </div>
     </div>
@@ -37,11 +37,21 @@ import Modal from "@/components/Modal.astro";
 
 <style>
   .course-modal-cards-content {
-    width: 45vw;
     > .course-cards-content {
       margin: 0 auto;
-      width: 33%;
+      > .course-card-item {
+        width: 35ch;
+      }
     }
+  }
 
+  @media (width <= 576px) {
+    .course-modal-cards-content {
+      > .course-cards-content {
+        > .course-card-item {
+          width: 100%;
+        }
+      }
+    }
   }
 </style>

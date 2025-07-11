@@ -21,8 +21,8 @@ import Modal from "@/components/Modal.astro";
       <div class="course-card-item">
         <p>
           Inmersión conversacional, Practica inglés en reuniones en vivo, 100%
-          en inglés, dirigida por una docente nativa de EE.UU. Ideal para docentes,
-          estudiantes y profesionales que buscan fluidez, confianza y
+          en inglés, dirigida por una docente nativa de EE.UU. Ideal para
+          docentes, estudiantes y profesionales que buscan fluidez, confianza y
           naturalidad al hablar.
         </p>
         <a
@@ -39,10 +39,21 @@ import Modal from "@/components/Modal.astro";
 
 <style>
   .course-modal-cards-content {
-    width: 45vw;
     > .course-cards-content {
       margin: 0 auto;
-      width: 35%;
+      > .course-card-item {
+        width: 35ch;
+      }
+    }
+  }
+
+  @media (width <= 576px) {
+    .course-modal-cards-content {
+      > .course-cards-content {
+        > .course-card-item {
+          width: 100%;
+        }
+      }
     }
   }
 </style>
