@@ -32,7 +32,7 @@
 .section-container {
   display: flex;
   gap: 2rem;
-  max-width: 85vw;
+  width: 85vw;
   margin: 0 auto;
   margin-bottom: var(--size-3);
 }
