@@ -13,25 +13,25 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
   <div class="shields-container">
     <div class="course-shield" id="course-shield-1">
       <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
-      <p class="">Ingles conversacional</p>
+      <p class="">Ingles Conversacional</p>
     </div>
     <ModalPlatformInglesConversacional />
     <div class="course-shield" id="course-shield-2">
       <img src="/icons/icono-ingles-para-ninos-up-optimizado.webp" />
-      <p class="">Ingles para niños</p>
+      <p class="">Ingles para Niños</p>
     </div>
     <ModalPlatformInglesNinos />
     <div class="course-shield">
       <img src="/icons/icon-bilingual-comunity-up-optimizado.webp" />
-      <p class="">Ingles virtual con clases en vivo</p>
+      <p class="">Ingles Virtual con Clases en Vivo</p>
     </div>
     <div class="course-shield">
       <img src="/icons/icono-otros-idiomas-up-optimizado.webp" />
-      <p class="">Inglés en vivo con nativos</p>
+      <p class="">Inglés en Vivo con Nativos</p>
     </div>
     <div class="course-shield">
       <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
-      <p class="">Otros idiomas</p>
+      <p class="">Otros Idiomas</p>
     </div>
     <div class="course-shield">
       <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
@@ -43,8 +43,10 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
 <style>
   .get-in-to-section {
     flex-direction: column;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     .title-container {
       display: flex;
@@ -52,16 +54,16 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
       justify-content: center;
       align-items: center;
       gap: 0.2rem;
-      margin-bottom: 1rem;
       > .title-section {
-        
         font-weight: 600;
       }
     }
 
     & .shields-container {
       display: flex;
-      gap: 0.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
 
       & .course-shield {
         cursor: pointer;
@@ -80,7 +82,7 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
         & img {
           padding-top: 0.5rem;
           width: 35%;
-          height: 35%;
+
           aspect-ratio: 1/1 !important;
           margin-bottom: 1.5rem;
         }
@@ -118,6 +120,34 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
         /* backdrop-filter: blur(40px); */
         clip-path: inherit; /* Usa la misma forma */
         z-index: -1;
+      }
+    }
+  }
+
+  @media (width <= 480px) {
+    .get-in-to-section {
+      .title-container {
+      }
+
+      & .shields-container {
+        & .course-shield {
+          width: 10rem;
+          height: 8.5rem;
+
+          & img {
+            padding-top: 0.5rem;
+            width: 30%;
+            margin-bottom: 1rem;
+          }
+
+          & p {
+            font-size: 1rem;
+          }
+
+          & span {
+            padding: 0.5rem;
+          }
+        }
       }
     }
   }
