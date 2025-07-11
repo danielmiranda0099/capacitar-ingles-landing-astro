@@ -34,7 +34,7 @@
   .swiper-highlights {
     width: 60%;
     height: 100%;
-    
+
     --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%),
       0 4px 4px -2px rgb(16 30 30 / 10%);
     box-shadow:
@@ -44,7 +44,7 @@
       0 0 #0000,
       var(--tw-shadow);
     border-radius: 22px;
-    
+
     & .swiper-wrapper {
       & .swiper-slide {
         border-radius: 22px;
@@ -63,6 +63,11 @@
           border-radius: 22px;
         }
       }
+    }
+  }
+  @media (width <= 1600px) {
+    .swiper-highlights {
+      width: 95%;
     }
   }
 </style>
