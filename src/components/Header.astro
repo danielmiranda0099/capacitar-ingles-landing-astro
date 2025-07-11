@@ -1,5 +1,4 @@
 ---
-import MenuIcon from "./icons/MenuIcon.astro";
 import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
 ---
 
@@ -8,7 +7,7 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
     <a href="/" class="logo-container">
       <img src="/logo.png" />
       <div class="slogan">
-        <h2 class="cs-text-3xl cs-bold">CAPACITAR</h2>
+        <h2 class="cs-text-3xl">CAPACITAR</h2>
         <span class="cs-bold">
           Instituto de Inglés, otros Idiomas y Artes
         </span>
@@ -51,10 +50,13 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
       .slogan {
         display: flex;
         flex-direction: column;
-
-        span {
-          margin-top: -8px;
+        gap: 0;
+        > h2 {
+          font-weight: 700;
+        }
+        > span {
           font-size: 1.25rem;
+          line-height: 0.8;
         }
       }
     }
@@ -76,6 +78,20 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
           rgba(58, 202, 255, 0.7) 30%,
           rgba(128, 237, 153, 0.9) 100%
         );
+      }
+    }
+  }
+
+  @media (width <= 576px) {
+    .header {
+      width: 95%;
+      .logo-container {
+        .slogan {
+          span {
+            margin-top: -4px;
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
