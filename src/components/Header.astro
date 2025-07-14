@@ -26,10 +26,17 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
   header {
     position: sticky;
     top: 0;
-    background-color: var(--bg-white);
+    background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 4px 56px 0px rgba(58, 62, 66, 0.1);
     z-index: 999;
     margin-bottom: 0;
+  }
+  header:after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(30px) brightness(1.05);
   }
   .header {
     margin-bottom: 0;
@@ -84,7 +91,7 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
 
   @media (width <= 576px) {
     .header {
-      width: 95%;
+      width: 98%;
       .logo-container {
         .slogan {
           span {
