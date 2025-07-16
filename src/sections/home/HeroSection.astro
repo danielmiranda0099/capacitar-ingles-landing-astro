@@ -10,6 +10,7 @@ import ModalOtherLanguages from "./components/ModalOtherLanguages.astro";
 import ModalArts from "./components/ModalArts.astro";
 import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astro";
 import Divider from "@/components/Divider.astro";
+import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astro";
 ---
 
 <section class="section-container hero-section">
@@ -71,9 +72,10 @@ import Divider from "@/components/Divider.astro";
         >
           Whatsapp <WhatsappIcon className="whatsapp-icon" /></a
         >
-        <a class="cs-btn button-inscription light" href="#"
+        <a class="cs-btn button-inscription light" id="button-free-courses"
           >Cursos Gratis <MousePointerClickIcon /></a
         >
+        <ModalPlatformFreeCourses />
       </div>
     </div>
   </div>
@@ -148,6 +150,7 @@ import Divider from "@/components/Divider.astro";
           } */
         }
         .buttons-call-to-action-container > .button-inscription {
+          cursor: pointer;
           color: white;
           font-weight: 700;
           /* Estilos para el borde animado */
