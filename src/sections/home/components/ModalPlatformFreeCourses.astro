@@ -1,0 +1,37 @@
+---
+import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
+import Modal from "@/components/Modal.astro";
+import VideoPlayer from "@/components/VideoPlayer.astro";
+---
+
+<Modal
+  id="modal-platform-free-courses"
+  title="Artes"
+  showButton={false}
+  triggerElements={["button-free-courses"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <div class="conversacional-course-content-to-platform">
+    <div class="conversacional-course-content-to-platform-video">
+      <VideoPlayer
+        src="/videos/horizontal-propa-3-optimizado.mp4"
+        poster="poster-horizontal.png"
+      />
+    </div>
+
+    <div class="conversacional-course-content-to-platform-cards">
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Curso de Inglés Gratis"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+        hrefUrl="https://virtual.capacitaringlesvirtual.tech/plataforma/course/view.php?id=3"
+      />
+      <CardImageHorizontal
+        urlImage="/icons/icono-ingles-conversacional-up-optimizado.webp"
+        title="Ingles Médico"
+        stylesCardContainer="margin-bottom: 0.5rem;"
+        hrefUrl="https://virtual.capacitaringlesvirtual.tech/plataforma/course/view.php?id=16"
+      />
+    </div>
+  </div>
+</Modal>

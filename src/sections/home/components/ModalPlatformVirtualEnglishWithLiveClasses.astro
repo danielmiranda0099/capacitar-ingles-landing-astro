@@ -5,10 +5,10 @@ import VideoPlayer from "@/components/VideoPlayer.astro";
 ---
 
 <Modal
-  id="modal-ingles-conversacional-to-platform"
-  title="Inglés Conversacional"
+  id="modal-ingles-virtual-with-live-classes"
+  title="Ingles Virtual con Clases en Vivo"
   showButton={false}
-  triggerElements={["course-shield-1"]}
+  triggerElements={["course-shield-3"]}
   buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
 >
   <div class="conversacional-course-content-to-platform">
@@ -47,70 +47,3 @@ import VideoPlayer from "@/components/VideoPlayer.astro";
     </div>
   </div>
 </Modal>
-
-<style is:global>
-  .conversacional-course-content-to-platform {
-    display: flex;
-    max-height: 80vh;
-    width: 60vw;
-    gap: 2.5rem;
-
-    > .conversacional-course-content-to-platform-video {
-      width: 60%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      > video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-    }
-    > .conversacional-course-content-to-platform-cards {
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0 1rem;
-    }
-  }
-
-  @media (width <= 1050px) {
-    .conversacional-course-content-to-platform {
-      flex-direction: column;
-      > .conversacional-course-content-to-platform-video {
-        width: 85%;
-      }
-      > .conversacional-course-content-to-platform-cards {
-        display: grid;
-        grid-template-columns: auto auto; /* 2 columnas que se adaptan al contenido */
-        place-items: center !important;
-        align-items: center !important;
-        justify-items: center !important;
-        width: 100%;
-        height: fit-content; /* Se ajusta al contenido */
-        margin: 0 auto;
-      }
-    }
-  }
-  @media (width <= 800px) {
-    .conversacional-course-content-to-platform {
-      width: 85vw;
-      > .conversacional-course-content-to-platform-video {
-        width: 100%;
-      }
-    }
-  }
-
-  @media (width <= 576px) {
-    .conversacional-course-content-to-platform {
-      width: 95vw;
-      > .conversacional-course-content-to-platform-video {
-        width: 100%;
-      }
-    }
-  }
-</style>
