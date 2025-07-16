@@ -1,4 +1,6 @@
 ---
+import Divider from "./Divider.astro";
+
 // Modal.astro - Versión mejorada
 interface Props {
   id: string;
@@ -33,16 +35,22 @@ const {
 } = Astro.props;
 ---
 
-<!-- Botón para abrir el modal (condicional) -->
-{showButton && (
-  <button id={`btn-${id}`} class={"cs-btn " + buttonClass}>{buttonText}</button>
-)}
+<!-- Botón para abrir el modal (condicional) -->{
+  showButton && (
+    <button id={`btn-${id}`} class={"cs-btn " + buttonClass}>
+      {buttonText}
+    </button>
+  )
+}
 
 <!-- Overlay y contenedor del modal -->
 <div id={id} class={overlayClass}>
   <div class={modalClass}>
     <div class="modal-header">
-      <div>{title && <h2>{title}</h2>}</div>
+      <div>
+        {title && <h2>{title}</h2>}
+        <Divider width="70%" />
+      </div>
       {showCloseButton && <button class="close-btn">&times;</button>}
     </div>
     <div class={contentClass}>
@@ -80,19 +88,45 @@ const {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: white;
     border-radius: 22px;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -2px; /* más grande que el card */
+      border-radius: 22px;
+      background: linear-gradient(
+        45deg,
+        #64cef4,
+        rgba(105, 105, 105, 0.8),
+        rgba(105, 105, 105, 0.8),
+        #76fb95
+      );
+      filter: blur(22px);
+      z-index: -1;
+      opacity: 0.8;
+    }
   }
 
   .modal-header {
     position: relative;
   }
 
+  .modal-header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 1.2rem;
+  }
   .modal-header h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    text-align: center;
   }
 
   .close-btn {
@@ -116,7 +150,7 @@ const {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -147,7 +181,9 @@ const {
   /* Estilos adicionales para elementos clickeables */
   .modal-trigger {
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
   }
 
   .modal-trigger:hover {
@@ -156,7 +192,10 @@ const {
   }
 </style>
 
-<script is:inline define:vars={{ id, closeOnOutsideClick, triggerElements, showButton }}>
+<script
+  is:inline
+  define:vars={{ id, closeOnOutsideClick, triggerElements, showButton }}
+>
   document.addEventListener("DOMContentLoaded", () => {
     // Obtenemos referencias a los elementos
     const modal = document.getElementById(id);
@@ -187,15 +226,15 @@ const {
       if (element) {
         // Añadir clase para efectos visuales
         element.classList.add("modal-trigger");
-        
+
         // Añadir event listener
         element.addEventListener("click", openModal);
-        
+
         // Opcional: añadir atributo para accesibilidad
         element.setAttribute("role", "button");
         element.setAttribute("tabindex", "0");
         element.setAttribute("aria-label", `Abrir modal: ${id}`);
-        
+
         // Soporte para tecla Enter/Space
         element.addEventListener("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
