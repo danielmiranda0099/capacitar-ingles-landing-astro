@@ -2,6 +2,10 @@
 import Divider from "@/components/Divider.astro";
 import ModalPlatformInglesConversacional from "./components/ModalPlatformInglesConversacional.astro";
 import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astro";
+import ModalPlatformVirtualEnglishWithLiveClasses from "./components/ModalPlatformVirtualEnglishWithLiveClasses.astro";
+import ModalPlatformLiveEnglishWithNativeSpeakers from "./components/ModalPlatformLiveEnglishWithNativeSpeakers.astro";
+import ModalPlatformOtherLanguages from "./components/ModalPlatformOtherLanguages.astro";
+import ModalPlatformArts from "./components/ModalPlatformArts.astro";
 ---
 
 <section class="section-container get-in-to-section">
@@ -21,22 +25,26 @@ import ModalPlatformInglesNinos from "./components/ModalPlatformInglesNinos.astr
       <p class="">Ingles para Niños</p>
     </div>
     <ModalPlatformInglesNinos />
-    <div class="course-shield">
+    <div class="course-shield" id="course-shield-3">
       <img src="/icons/icon-bilingual-comunity-up-optimizado.webp" />
       <p class="">Ingles Virtual con Clases en Vivo</p>
     </div>
-    <div class="course-shield">
+    <ModalPlatformVirtualEnglishWithLiveClasses />
+    <div class="course-shield" id="course-shield-4">
       <img src="/icons/icono-otros-idiomas-up-optimizado.webp" />
       <p class="">Inglés en Vivo con Nativos</p>
     </div>
-    <div class="course-shield">
+    <ModalPlatformLiveEnglishWithNativeSpeakers />
+    <div class="course-shield" id="course-shield-5">
       <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
       <p class="">Otros Idiomas</p>
     </div>
-    <div class="course-shield">
+    <ModalPlatformOtherLanguages />
+    <div class="course-shield" id="course-shield-6">
       <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
       <p class="">Artes</p>
     </div>
+    <ModalPlatformArts />
   </div>
 </section>
 
