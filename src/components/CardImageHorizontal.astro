@@ -36,27 +36,36 @@ const {
 
 <style>
   .card-container {
+    position: relative;
     display: flex;
     width: 100%;
     height: 4rem; /* Cambio de max-height a height */
-    background: rgba(255, 255, 255, 0.7);
-    background-color: rgba(241, 255, 247, 0.2);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 1);
-    border-radius: 22px;
-    overflow: hidden;
-    --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%),
-      0 4px 4px -2px rgb(16 30 30 / 10%);
-    box-shadow:
-      0 0 #0000,
-      0 0 #0000,
-      0 0 #0000,
-      0 0 #0000,
-      var(--tw-shadow);
 
-    z-index: 1;
+    background-color: rgba(255, 255, 255, 1);
+    /* background-image: radial-gradient(
+        at 40% 0%,
+        rgb(255, 255, 255) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+         at 70% 100%,
+        rgb(255, 255, 255) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 100% 0%,
+        #c1f5cd 0px,
+        transparent 20%
+      ); */
+
+    /* backdrop-filter: blur(80px); */
+    border: 0;
+    border-radius: 22px;
+    /* overflow: hidden; */
+    --tw-shadow: 0 0 5px 0 rgba(78, 105, 105, 0.1),
+      0 2px 7px 0 rgba(78, 105, 105, 0.1),
+      0 4px 4px -2px rgba(78, 105, 105, 0.1);
+    box-shadow: var(--tw-shadow);
     .card-image-container {
       width: 30%;
       height: 100%; /* Ocupa toda la altura */
@@ -84,6 +93,45 @@ const {
         margin-bottom: 0.5rem;
         line-height: 1.1;
       }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -2px; /* más grande que el card */
+      border-radius: 22px;
+      background: linear-gradient(45deg, #77dbff, #ffffff, #ffffff, #88ffa4);
+      filter: blur(22px);
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+      border: 2.5px solid transparent;
+
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+
+      background: linear-gradient(
+          45deg,
+          #62d1f9,
+          #ffffff,
+          #ffffff,
+          #ffffff,
+          #ffffff,
+          #82fd9f
+        )
+        border-box;
+      /* z-index: -1; */
     }
   }
 </style>
