@@ -199,3 +199,10 @@ Algunos fabricantes de fuentes también incluyen:
   font-weight: 700;
   gap: 0.5rem;
 }
+@media screen and (width <= 480px) {
+  .cs-btn {
+    padding: 0.7rem 1rem;
+    gap: 0.1rem;
+  }
+}
+
