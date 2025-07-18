@@ -1,7 +1,6 @@
 ---
 import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
 import SliderVideoHome from "./components/SliderVideoHome.astro";
-import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
 import ModalInglesConversacional from "./components/ModalInglesConversacional.astro";
 import ModalInglesForKids from "./components/ModalInglesForKids.astro";
 import ModalVirtualEnglishWithLiveClasses from "./components/ModalVirtualEnglishWithLiveClasses.astro";
@@ -65,13 +64,6 @@ import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astr
       </div>
 
       <div class="buttons-call-to-action-container">
-        <a
-          class="cs-btn cs-bg-green-wh cs-color-white"
-          href="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
-          target="_blank"
-        >
-          Whatsapp <WhatsappIcon className="whatsapp-icon" /></a
-        >
         <a class="cs-btn button-inscription light" id="button-free-courses"
           >Cursos Gratis <MousePointerClickIcon /></a
         >
@@ -117,7 +109,7 @@ import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astr
       > .content-courses-info {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 5rem;
         & .cards-container {
           display: flex;
           gap: 1rem;
@@ -342,6 +334,10 @@ import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astr
               gap: 2rem;
             }
           }
+          > .buttons-call-to-action-container {
+          justify-content: center;
+          align-items: center;
+        }
         }
       }
       .slider-video-container {
