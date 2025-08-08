@@ -6,6 +6,45 @@ import ModalPlatformVirtualEnglishWithLiveClasses from "./components/ModalPlatfo
 import ModalPlatformLiveEnglishWithNativeSpeakers from "./components/ModalPlatformLiveEnglishWithNativeSpeakers.astro";
 import ModalPlatformOtherLanguages from "./components/ModalPlatformOtherLanguages.astro";
 import ModalPlatformArts from "./components/ModalPlatformArts.astro";
+
+const courses = [
+  {
+    id: 1,
+    title: ["Inglés Conversacional"],
+    icon: "/icons/icono-ingles-conversacional-up-optimizado.webp",
+    modal: ModalPlatformInglesConversacional,
+  },
+  {
+    id: 2,
+    title: ["Inglés", "para Niños"],
+    icon: "/icons/icono-ingles-conversacional-up-optimizado.webp",
+    modal: ModalPlatformInglesNinos,
+  },
+  {
+    id: 3,
+    title: ["Inglés Virtual con Clases en Vivo"],
+    icon: "/icons/icon-bilingual-comunity-up-optimizado.webp",
+    modal: ModalPlatformVirtualEnglishWithLiveClasses,
+  },
+  {
+    id: 4,
+    title: ["Inglés en Vivo con Nativos"],
+    icon: "/icons/icono-otros-idiomas-up-optimizado.webp",
+    modal: ModalPlatformLiveEnglishWithNativeSpeakers,
+  },
+  {
+    id: 5,
+    title: ["Otros Idiomas"],
+    icon: "/icons/icono-ingles-conversacional-up-optimizado.webp",
+    modal: ModalPlatformOtherLanguages,
+  },
+  {
+    id: 6,
+    title: ["Artes"],
+    icon: "/icons/icono-ingles-conversacional-up-optimizado.webp",
+    modal: ModalPlatformArts,
+  },
+];
 ---
 
 <section class="section-container get-in-to-section">
@@ -15,36 +54,25 @@ import ModalPlatformArts from "./components/ModalPlatformArts.astro";
   </div>
 
   <div class="shields-container">
-    <div class="course-shield" id="course-shield-1">
-      <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
-      <p class="">Ingles Conversacional</p>
-    </div>
-    <ModalPlatformInglesConversacional />
-    <div class="course-shield" id="course-shield-2">
-      <img src="/icons/icono-ingles-para-ninos-up-optimizado.webp" />
-      <p class="">Ingles para Niños</p>
-    </div>
-    <ModalPlatformInglesNinos />
-    <div class="course-shield" id="course-shield-3">
-      <img src="/icons/icon-bilingual-comunity-up-optimizado.webp" />
-      <p class="">Ingles Virtual con Clases en Vivo</p>
-    </div>
-    <ModalPlatformVirtualEnglishWithLiveClasses />
-    <div class="course-shield" id="course-shield-4">
-      <img src="/icons/icono-otros-idiomas-up-optimizado.webp" />
-      <p class="">Inglés en Vivo con Nativos</p>
-    </div>
-    <ModalPlatformLiveEnglishWithNativeSpeakers />
-    <div class="course-shield" id="course-shield-5">
-      <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
-      <p class="">Otros Idiomas</p>
-    </div>
-    <ModalPlatformOtherLanguages />
-    <div class="course-shield" id="course-shield-6">
-      <img src="/icons/icono-ingles-conversacional-up-optimizado.webp" />
-      <p class="">Artes</p>
-    </div>
-    <ModalPlatformArts />
+    {
+      courses.map(({ id, title, icon, modal: ModalComponent }) => (
+        <>
+          <div class="course-shield" id={`course-shield-${id}`}>
+            <div class="shield-content">
+              <img
+                alt={`Icono curso ${title[0]}`}
+                class="shield-icon"
+                src={icon}
+              />
+              {title.map((line) => (
+                <p>{line}</p>
+              ))}
+            </div>
+          </div>
+          <ModalComponent />
+        </>
+      ))
+    }
   </div>
 </section>
 
@@ -55,105 +83,141 @@ import ModalPlatformArts from "./components/ModalPlatformArts.astro";
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding: 3.5rem 0;
+    padding-top: 2rem;
+    margin-top: var(--size-2);
+    background-color: var(--bg-blue-700);
 
-    .title-container {
+    > .title-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 0.2rem;
+
       > .title-section {
         font-weight: 600;
+        color: white;
       }
     }
 
-    & .shields-container {
+    > .shields-container {
       display: flex;
-      gap: 1rem;
+      gap: 3rem;
       flex-wrap: wrap;
       justify-content: center;
 
-      & .course-shield {
-        cursor: pointer;
+      > .course-shield {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 12rem;
         height: 12rem;
-        background-color: rgba(0, 0, 0, 0.1);
-        padding: 3px;
-        clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
-        backdrop-filter: blur(40px);
+        background-image: url("/shield-image.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(0.5px) saturate(1.8);
+        transition: filter 0.3s ease-in-out;
 
-        /* z-index: 10000 !important; */
-        & img {
-          padding-top: 0.5rem;
-          width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
 
-          aspect-ratio: 1/1 !important;
-          margin-bottom: 1.5rem;
-        }
-
-        & p {
-          font-size: 1.2rem;
-          text-align: center;
-          font-weight: 700;
-          line-height: 1.1;
-          text-wrap: balance;
-        }
-
-        & span {
-          font-weight: 700;
-          line-height: 1.1;
-          padding: 0.5rem;
-          background-color: var(--bg-blue-400);
+        > .shield-content {
+          position: relative;
           width: 100%;
-          color: white;
-          text-align: center;
-          position: absolute;
-          top: 70%;
-          transform: translateY(-100%);
-          border-left: 3px solid transparent;
-          border-right: 3px solid transparent;
-        }
-      }
+          height: 100%;
 
-      & .course-shield::before {
-        content: "";
-        position: absolute;
-        inset: 3px;
-        /* border: 2px solid black; */
-        background-color: rgba(240, 255, 244, 1);
-        /* backdrop-filter: blur(40px); */
-        clip-path: inherit; /* Usa la misma forma */
-        z-index: -1;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: start;
+          text-align: center;
+          padding-top: 1rem;
+
+          > p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-blue-700);
+            line-height: 1.1;
+            text-align: center;
+            text-wrap: balance;
+            text-shadow: -1px -1px 0 #ffffffaf, 1px -1px 0 #ffffffaf, -1px 1px 0 #ffffffaf, 1px 1px 0 #ffffffaf;
+          }
+
+          > .shield-icon {
+            width: 35%;
+            aspect-ratio: 1/1 !important;
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        &::before {
+          background-image: url("/shield-image-2.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+          content: "";
+          filter: blur(0px) saturate(1.5);
+          width: 100%;
+          height: 100%;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          inset: 2rem;
+          filter: blur(25px);
+          background: linear-gradient(
+            45deg,
+            #77dbffcc,
+            #ffffff4f,
+            #ffffff4f,
+            #88ffa4cc
+          );
+          z-index: -1;
+          transition: filter 0.3s ease-in-out;
+        }
+
+        &:hover {
+          filter: blur(0.5px) saturate(3.5);
+          transform: scale(1.05);
+
+          &::before {
+            filter: blur(30px) saturate(4);
+          }
+
+          &::after {
+            filter: blur(45px);
+            
+          }
+        }
       }
     }
   }
 
   @media (width <= 480px) {
     .get-in-to-section {
-      .title-container {
-      }
-
-      & .shields-container {
-        & .course-shield {
-          width: 10rem;
+      > .shields-container {
+        gap: 1.5rem;
+        > .course-shield {
+          width: 12rem;
           height: 8.5rem;
 
-          & img {
-            padding-top: 0.5rem;
-            width: 30%;
-            margin-bottom: 1rem;
-          }
-
-          & p {
-            font-size: 1rem;
-          }
-
-          & span {
-            padding: 0.5rem;
+          > .shield-content {
+            padding: 1rem 6px;
+            > p {
+              font-size: 0.8rem;
+              width: 80%;
+            }
+            > .shield-icon {
+              padding-top: 0rem;
+              width: 30%;
+              margin-bottom: 0.5rem;
+            }
           }
         }
       }
