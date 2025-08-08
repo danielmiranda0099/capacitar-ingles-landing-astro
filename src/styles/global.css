@@ -97,7 +97,7 @@ body::before {
   gap: 2rem;
   width: 85vw;
   margin: 0 auto;
-  margin-bottom: var(--size-3);
+  margin-bottom: var(--size-6);
 }
 
 .swiper-button-prev::after,
