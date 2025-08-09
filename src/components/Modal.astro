@@ -1,21 +1,20 @@
 ---
 import Divider from "./Divider.astro";
 
-// Modal.astro - Versión mejorada
 interface Props {
   id: string;
   title?: string;
   closeOnOutsideClick?: boolean;
   showCloseButton?: boolean;
   showFooter?: boolean;
-  showButton?: boolean; // Nueva prop para mostrar/ocultar botón
+  showButton?: boolean;
   buttonText?: string;
   buttonClass?: string;
   buttonExitClass?: string;
   modalClass?: string;
   overlayClass?: string;
   contentClass?: string;
-  triggerElements?: string[]; // Nueva prop para elementos que abren el modal
+  triggerElements?: string[];
 }
 
 const {
@@ -24,18 +23,18 @@ const {
   closeOnOutsideClick = true,
   showCloseButton = true,
   showFooter = false,
-  showButton = true, // Por defecto muestra el botón
+  showButton = true,
   buttonText = "Abrir Modal",
   buttonClass = "cs-bg-blue-400 cs-color-white",
   buttonExitClass = "cs-btn",
   modalClass = "modal",
   overlayClass = "modal-overlay",
   contentClass = "modal-content",
-  triggerElements = [], // Array de IDs de elementos que abren el modal
+  triggerElements = [],
 } = Astro.props;
 ---
 
-<!-- Botón para abrir el modal (condicional) -->{
+{
   showButton && (
     <button id={`btn-${id}`} class={"cs-btn " + buttonClass}>
       {buttonText}
@@ -43,30 +42,78 @@ const {
   )
 }
 
-<!-- Overlay y contenedor del modal -->
 <div id={id} class={overlayClass}>
-  <div class={modalClass}>
-    <div class="modal-header">
-      <div>
-        {title && <h2>{title}</h2>}
-        <Divider width="70%" />
-      </div>
-      {showCloseButton && <button class="close-btn">&times;</button>}
-    </div>
-    <div class={contentClass}>
-      <slot />
-    </div>
-    {
-      showFooter && (
-        <div class="modal-footer">
-          <button class={"modal-exit-btn " + buttonExitClass}>Cerrar</button>
+  <div class="modal-container">
+    <div class="modal-glow"></div>
+    <div class={modalClass}>
+      <div class="modal-header">
+        <div>
+          {title && <h2>{title}</h2>}
+          <Divider width="70%" />
         </div>
-      )
-    }
+        {showCloseButton && <button class="close-btn">&times;</button>}
+      </div>
+      <div class={contentClass}>
+        <slot />
+      </div>
+      {
+        showFooter && (
+          <div class="modal-footer">
+            <button class={"modal-exit-btn " + buttonExitClass}>Cerrar</button>
+          </div>
+        )
+      }
+    </div>
   </div>
 </div>
 
 <style>
+  /* Animaciones Overlay */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      opacity: 1;
+      backdrop-filter: blur(2.5px);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      backdrop-filter: blur(2.5px);
+    }
+    to {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  /* Animaciones Modal Content */
+  @keyframes slideUp {
+    from {
+      transform: translateY(120px);
+      opacity: 0.7;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+  }
+
   .modal-overlay {
     display: none;
     position: fixed;
@@ -74,46 +121,73 @@ const {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 100;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.show {
+    display: flex;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .modal-overlay.hide {
+    animation: fadeOut 0.5s forwards;
+  }
+
+  .modal-container {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+    background-color: transparent;
+  }
+
+  .modal-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    border-radius: 22px;
+    background: linear-gradient(
+      45deg,
+      #64cef4cc,
+      #ffffff4f,
+      #ffffff4f,
+      #76fb95cc
+    );
+    filter: blur(40px);
+    z-index: -1;
   }
 
   .modal {
-    position: relative;
     width: auto;
     height: auto;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
     background-color: white;
     border-radius: 22px;
-    &::after {
-      content: "";
-      position: absolute;
-      inset: -2px; /* más grande que el card */
-      border-radius: 22px;
-      background: linear-gradient(
-        45deg,
-        #64cef4,
-        rgba(105, 105, 105, 0.8),
-        rgba(105, 105, 105, 0.8),
-        #76fb95
-      );
-      filter: blur(22px);
-      z-index: -1;
-      opacity: 0.8;
-    }
+    opacity: 0.9;
+    z-index: 1;
   }
 
-  .modal-header {
+  .modal.opening {
+    animation: slideUp 0.6s ease forwards;
+  }
+
+  .modal.closing {
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .modal > .modal-header {
     position: relative;
   }
 
-  .modal-header > div {
+  .modal > .modal-header > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,7 +197,8 @@ const {
     margin: 0 auto;
     margin-bottom: 1.2rem;
   }
-  .modal-header h2 {
+
+  .modal > .modal-header > div > h2 {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -141,7 +216,6 @@ const {
   }
 
   .close-btn:hover {
-    background: white;
     transform: scale(1.1);
   }
 
@@ -150,10 +224,10 @@ const {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    z-index: 1;
   }
 
   .modal-footer {
@@ -178,12 +252,8 @@ const {
     transform: translateY(-1px);
   }
 
-  /* Estilos adicionales para elementos clickeables */
   .modal-trigger {
     cursor: pointer;
-    transition:
-      transform 0.2s ease,
-      opacity 0.2s ease;
   }
 
   .modal-trigger:hover {
@@ -194,48 +264,50 @@ const {
 
 <script
   is:inline
-  define:vars={{ id, closeOnOutsideClick, triggerElements, showButton }}
+  define:vars={{
+    id,
+    closeOnOutsideClick,
+    triggerElements,
+    showButton,
+    modalClass,
+  }}
 >
   document.addEventListener("DOMContentLoaded", () => {
-    // Obtenemos referencias a los elementos
     const modal = document.getElementById(id);
+    const modalContent = modal.querySelector(`.${modalClass}`);
     const openBtn = showButton ? document.getElementById(`btn-${id}`) : null;
     const closeBtn = modal.querySelector(".close-btn");
     const exitBtns = modal.querySelectorAll(".modal-exit-btn");
 
-    // Función para abrir el modal
     const openModal = () => {
       modal.style.display = "flex";
-      // document.body.style.overflow = "hidden"; // Prevenir scroll del body
+      modal.classList.remove("hide");
+      modal.classList.add("show");
+      modalContent.classList.remove("closing");
+      modalContent.classList.add("opening");
     };
 
-    // Función para cerrar el modal
     const closeModal = () => {
-      modal.style.display = "none";
-      // document.body.style.overflow = "auto"; // Restaurar scroll del body
+      modalContent.classList.remove("opening");
+      modalContent.classList.add("closing");
+      modal.classList.remove("show");
+      modal.classList.add("hide");
+
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
     };
 
-    // Event listener para el botón de apertura (si existe)
-    if (openBtn) {
-      openBtn.addEventListener("click", openModal);
-    }
+    if (openBtn) openBtn.addEventListener("click", openModal);
 
-    // Event listeners para elementos trigger externos
     triggerElements.forEach((elementId) => {
       const element = document.getElementById(elementId);
       if (element) {
-        // Añadir clase para efectos visuales
         element.classList.add("modal-trigger");
-
-        // Añadir event listener
         element.addEventListener("click", openModal);
-
-        // Opcional: añadir atributo para accesibilidad
         element.setAttribute("role", "button");
         element.setAttribute("tabindex", "0");
         element.setAttribute("aria-label", `Abrir modal: ${id}`);
-
-        // Soporte para tecla Enter/Space
         element.addEventListener("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
@@ -245,17 +317,9 @@ const {
       }
     });
 
-    // Event listener para el botón de cierre (X)
-    if (closeBtn) {
-      closeBtn.addEventListener("click", closeModal);
-    }
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    exitBtns.forEach((btn) => btn.addEventListener("click", closeModal));
 
-    // Event listener para todos los botones de salida
-    exitBtns.forEach((btn) => {
-      btn.addEventListener("click", closeModal);
-    });
-
-    // Event listener para cerrar al hacer clic en el overlay
     if (closeOnOutsideClick) {
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {
@@ -264,7 +328,6 @@ const {
       });
     }
 
-    // Event listener para tecla ESC
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && modal.style.display === "flex") {
         closeModal();
