@@ -19,7 +19,6 @@ interface Props {
 
 const {
   id,
-  title = "",
   closeOnOutsideClick = true,
   showCloseButton = true,
   showFooter = false,
@@ -46,13 +45,9 @@ const {
   <div class="modal-container">
     <div class="modal-glow"></div>
     <div class={modalClass}>
-      <div class="modal-header">
-        <div>
-          {title && <h2>{title}</h2>}
-          <Divider width="70%" />
-        </div>
+      
         {showCloseButton && <button class="close-btn">&times;</button>}
-      </div>
+      
       <div class={contentClass}>
         <slot />
       </div>
@@ -94,7 +89,7 @@ const {
   /* Animaciones Modal Content */
   @keyframes slideUp {
     from {
-      transform: translateY(120px);
+      transform: translateY(150px);
       opacity: 0.7;
     }
     to {
@@ -109,7 +104,7 @@ const {
       opacity: 1;
     }
     to {
-      transform: translateY(120px);
+      transform: translateY(150px);
       opacity: 0;
     }
   }
@@ -173,46 +168,27 @@ const {
     border-radius: 22px;
     opacity: 0.9;
     z-index: 1;
-  }
-
-  .modal.opening {
-    animation: slideUp 0.6s ease forwards;
-  }
-
-  .modal.closing {
-    animation: slideDown 0.4s ease forwards;
-  }
-
-  .modal > .modal-header {
     position: relative;
   }
 
-  .modal > .modal-header > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: fit-content;
-    margin: 0 auto;
-    margin-bottom: 1.2rem;
+  .modal.opening {
+    animation: slideUp 0.7s ease forwards;
   }
 
-  .modal > .modal-header > div > h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
+  .modal.closing {
+    animation: slideDown 0.6s ease forwards;
   }
 
   .close-btn {
     position: absolute;
-    top: -1rem;
-    right: 0;
+    top: 0.5rem;
+    right: 1.5rem;
     border: none;
     font-size: 2.5rem;
     cursor: pointer;
     line-height: 1;
     color: #333;
+    z-index: 10;
   }
 
   .close-btn:hover {
