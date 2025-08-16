@@ -1,15 +1,15 @@
 ---
 import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
 import SliderVideoHome from "./components/SliderVideoHome.astro";
-import ModalInglesConversacional from "./components/ModalInglesConversacional.astro";
-import ModalInglesForKids from "./components/ModalInglesForKids.astro";
-import ModalVirtualEnglishWithLiveClasses from "./components/ModalVirtualEnglishWithLiveClasses.astro";
-import ModalLiveEnglishWithNativeSpeakers from "./components/ModalLiveEnglishWithNativeSpeakers.astro";
-import ModalOtherLanguages from "./components/ModalOtherLanguages.astro";
-import ModalArts from "./components/ModalArts.astro";
 import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astro";
 import Divider from "@/components/Divider.astro";
 import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astro";
+import ModalInglesConversacional from "@/components/heroSection/ModalInglesConversacional.astro";
+import ModalInglesForKids from "@/components/heroSection/ModalInglesForKids.astro";
+import ModalVirtualEnglishWithLiveClasses from "@/components/heroSection/ModalVirtualEnglishWithLiveClasses.astro";
+import ModalLiveEnglishWithNativeSpeakers from "@/components/heroSection/ModalLiveEnglishWithNativeSpeakers.astro";
+import ModalOtherLanguages from "@/components/heroSection/ModalOtherLanguages.astro";
+import ModalArts from "@/components/heroSection/ModalArts.astro";
 ---
 
 <section class="section-container hero-section">
@@ -101,18 +101,18 @@ import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astr
         > .title {
         }
       }
-      & span {
+      > span {
         margin-bottom: -0.8rem;
         font-weight: 900;
       }
-      & p {
+      > p {
         font-weight: 500;
       }
       > .content-courses-info {
         display: flex;
         flex-direction: column;
         gap: 5rem;
-        & .cards-container {
+        > .cards-container {
           display: flex;
           gap: 1rem;
           justify-content: start;
@@ -339,9 +339,9 @@ import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astr
             }
           }
           > .buttons-call-to-action-container {
-          justify-content: center;
-          align-items: center;
-        }
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
       .slider-video-container {
