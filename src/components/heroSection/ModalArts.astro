@@ -1,0 +1,31 @@
+---
+import CourseBenefits from "@/components/heroSection/CourseBenefits.astro";
+import CheckIcon from "@/components/icons/CheckIcon.astro";
+import Modal from "@/components/Modal.astro";
+const benefitsData = [
+  {
+    title: `Artes plásticas`,
+
+    text: `Artes plásticas para niños y jóvenes: Cursos de dibujo, pintura y
+          modelado que estimulan la creatividad, autoestima y expresión
+          emocional. Sin experiencia previa, solo ganas de explorar el arte en
+          un entorno libre y seguro.`,
+    icon: CheckIcon,
+  },
+];
+---
+
+<Modal
+  id="modal-arts"
+  showButton={false}
+  triggerElements={["card-arts"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <CourseBenefits
+    title="ARTES"
+    description=`Despierta el artista interior de niños y adolescentes, ¡sin experiencia
+      previa!`
+    benefits={benefitsData}
+    whatsappLink="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
+  />
+</Modal>

@@ -1,0 +1,51 @@
+---
+import CourseBenefits from "@/components/heroSection/CourseBenefits.astro";
+import CheckIcon from "@/components/icons/CheckIcon.astro";
+import Modal from "@/components/Modal.astro";
+const benefitsData = [
+  {
+    title: `<h3>Jardín bilingüe</h3>
+        <span>(5 a 6 años de edad)</span>`,
+
+    text: `Curso lúdico e inmersivo donde los niños aprenden inglés escuchando y
+          jugando. Desarrollan comprensión auditiva y aprenden de forma natural,
+          como su lengua materna.`,
+    icon: CheckIcon,
+  },
+  {
+    title: `
+        <h3>Club de niños bilingües</h3>
+        <span>(7 a 9 años de edad)</span>`,
+
+    text: `Los niños amplían vocabulario, practican pronunciación y aprenden a
+          expresarse en situaciones cotidianas. Objetivo: iniciar la producción
+          oral y ganar soltura.`,
+    icon: CheckIcon,
+  },
+  {
+    title: `
+        <h3>Conversación para Niños</h3>
+        <span>(10 a 12 años de edad)</span>`,
+
+    text: `Refuerzan la fluidez, piensan en inglés y se comunican con confianza.
+          Objetivo: desarrollar pensamiento bilingüe y expresión oral natural,
+          con alegría y propósito.`,
+    icon: CheckIcon,
+  },
+];
+---
+
+<Modal
+  id="modal-ingles-conversacional-for-kids"
+  showButton={false}
+  triggerElements={["card-ingles-for-kids"]}
+  buttonExitClass="cs-btn cs-bg-blue-400 cs-color-white"
+>
+  <CourseBenefits
+    title="INGLÉS PARA NIÑOS"
+    description=`Una experiencia de aprendizaje del inglés divertida, natural y efectiva
+      desde la infancia.`
+    benefits={benefitsData}
+    whatsappLink="https://wa.me/573116771698?text=Hola,%20estoy%20interesado%20en..."
+  />
+</Modal>
