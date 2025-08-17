@@ -103,7 +103,7 @@ const {
       background: linear-gradient(45deg, #77dbff, #ffffff, #ffffff, #88ffa4);
       filter: blur(22px);
       z-index: -1;
-      opacity: 0.6;
+      opacity: 0.4;
     }
 
     &::after {
@@ -132,6 +132,14 @@ const {
         )
         border-box;
       /* z-index: -1; */
+    }
+
+    &:hover {
+      scale: 1.04;
+
+      &::before {
+        opacity: 0.8;
+      }
     }
   }
 
