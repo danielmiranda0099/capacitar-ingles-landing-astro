@@ -5,8 +5,8 @@ import Divider from "@/components/Divider.astro";
 <section class="section-container mission-vision-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">¿Quiénes somos?</h2>
-      <Divider />
+      <h2 class="section-title cs-text-3xl">¿Quiénes somos?</h2>
+      <Divider width="40%" />
     </div>
 
     <div class="mission-vision-grid">
@@ -25,7 +25,7 @@ import Divider from "@/components/Divider.astro";
               <path d="M2 12l10 5 10-5"></path>
             </svg>
           </div>
-          <h3 class="card-title">Nuestra Misión</h3>
+          <h3 class="card-title">Misión</h3>
         </div>
 
         <div class="card-content">
@@ -43,15 +43,6 @@ import Divider from "@/components/Divider.astro";
             curso intensivo de 10 meses o semi-intensivo de 2 años.
           </p>
         </div>
-
-        <!-- Imagen decorativa para misión -->
-        <!-- <div class="card-image">
-            <img
-              src="/placeholder.svg?height=200&width=300"
-              alt="Estudiantes aprendiendo inglés"
-              class="decorative-img"
-            />
-          </div> -->
       </div>
 
       <!-- Tarjeta de Visión -->
@@ -69,7 +60,7 @@ import Divider from "@/components/Divider.astro";
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
           </div>
-          <h3 class="card-title">Nuestra Visión</h3>
+          <h3 class="card-title">Visión</h3>
         </div>
 
         <div class="card-content">
@@ -94,7 +85,6 @@ import Divider from "@/components/Divider.astro";
 
 <style>
   .container {
-    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -111,8 +101,7 @@ import Divider from "@/components/Divider.astro";
   }
 
   .section-title {
-    font-size: 2.25rem;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   .mission-vision-grid {
@@ -120,46 +109,56 @@ import Divider from "@/components/Divider.astro";
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: start;
+    align-items: stretch;
   }
 
   .card {
+    position: relative;
     background: var(--bg-white);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 40px rgba(44, 53, 88, 0.08);
-    border: 1px solid rgba(44, 53, 88, 0.05);
+    border-radius: 22px;
+    box-shadow:
+      0 0 5px rgba(78, 105, 105, 0.1),
+      0 2px 7px rgba(78, 105, 105, 0.1),
+      0 4px 4px -2px rgba(78, 105, 105, 0.1);
+
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
   }
 
   .card-header {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
     align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
+    padding: 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    padding-top: 0;
   }
 
   .icon-container {
     width: 55px;
     height: 55px;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
     flex-shrink: 0;
+    margin: o auto;
   }
 
-  .mission-icon {
-    background: linear-gradient(135deg, var(--bg-blue-400), var(--bg-blue-700));
-  }
-
+  .mission-icon,
   .vision-icon {
     background: linear-gradient(
       135deg,
-      var(--bg-green-400),
-      var(--bg-green-700)
+      var(--bg-blue-400),
+      var(--bg-green-400)
     );
+    border-radius: 50%;
   }
 
   .card-icon {
@@ -171,31 +170,53 @@ import Divider from "@/components/Divider.astro";
 
   .card-title {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 900;
     margin: 0;
+    text-align: center;
   }
 
   .card-text {
-    font-size: 1.2rem;
-    color: var(--color-blue-700);
+    font-size: 1.125rem;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
   }
 
   /* Efectos decorativos */
-  .mission-card::before,
-  .vision-card::before {
+  .card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--bg-blue-400), var(--bg-green-400));
+
+    inset: -2px;
+    border-radius: 22px;
+    background: linear-gradient(45deg, #77dbff, #ffffff, #ffffff, #88ffa4);
+    filter: blur(22px);
+    z-index: -1;
+    opacity: 0.6;
   }
 
-  .vision-card::before {
-    background: linear-gradient(90deg, var(--bg-green-400), var(--bg-blue-400));
+  .card::after {
+    position: absolute;
+    content: "";
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    border: 2.5px solid transparent;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    background: linear-gradient(
+        45deg,
+        #62d1f9,
+        #ffffff,
+        #ffffff,
+        #ffffff,
+        #ffffff,
+        #82fd9f
+      )
+      border-box;
   }
 
   /* Responsive Design */
@@ -203,10 +224,6 @@ import Divider from "@/components/Divider.astro";
     .mission-vision-grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
     }
 
     .card {
@@ -217,10 +234,6 @@ import Divider from "@/components/Divider.astro";
   @media (max-width: 768px) {
     .mission-vision-section {
       padding: 3rem 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
     }
 
     .card-header {
