@@ -92,6 +92,7 @@ import Divider from "@/components/Divider.astro";
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -180,19 +181,28 @@ import Divider from "@/components/Divider.astro";
   import Swiper from "swiper";
   import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation, Pagination } from "swiper/modules";
+  import { Autoplay, Navigation, Pagination } from "swiper/modules";
   import "swiper/css/navigation";
   import "swiper/css/pagination";
 
   var swiper = new Swiper(".swiper-graduations", {
-    modules: [Navigation, Pagination],
-    loop: true, // definir si los slides estarán en bucle
+    modules: [Autoplay, Navigation, Pagination],
+    loop: true,
     centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: 40,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
     },
   });
 </script>

@@ -100,6 +100,10 @@ body::before {
   margin-bottom: var(--size-6);
 }
 
+.swiper:hover {
+  scale: 1.005;
+  filter: brightness(1.05) contrast(1.05);
+}
 .swiper-button-prev::after,
 .swiper-button-next::after {
   height: 4rem;
@@ -110,11 +114,15 @@ body::before {
   color: var(--color-blue-700);
   font-weight: 900;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+}
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  background: rgba(255, 255, 255, 0.8);  
+  transform: scale(1.09);
 }
 
 .swiper-button-prev::after {
@@ -122,4 +130,35 @@ body::before {
 }
 .swiper-button-next::after {
   margin-left: -1.5rem;
+}
+
+.swiper-pagination {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  width: fit-content !important;
+  padding: 0.5rem 1rem;
+  border-radius: 22px;
+  margin: 0 auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-blue-700) !important;
+  width: 0.6rem !important;
+  height: 0.6rem !important;
+  margin: 0 8px !important;
+  transition: background-color 0.5s, transform 0.3s !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(
+    135deg,
+    var(--bg-blue-400),
+    var(--bg-green-400)
+  ) !important;
+  opacity: 1 !important;
+  transform: scale(1.6) !important;
+  border: 1px solid rgb(52, 53, 61);
 }
