@@ -83,10 +83,11 @@ const courses = [
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 3.5rem 0;
-    padding-top: 2rem;
+    padding: 8rem 1rem;
+    padding-top: 4rem;
     margin-top: var(--size-2);
-    background-color: var(--bg-blue-700);
+    /* background-color: var(--bg-blue-700); */
+    background: linear-gradient(25deg, var(--bg-blue-700), 70%, #4cc268);
 
     > .title-container {
       display: flex;
@@ -143,7 +144,11 @@ const courses = [
             line-height: 1.1;
             text-align: center;
             text-wrap: balance;
-            text-shadow: -1.5px -1.5px 0 black, 1.5px -1.5px 0 black, -1.5px 1.5px 0 black, 1.5px 1.5px 0 black;
+            text-shadow:
+              -1.5px -1.5px 0 black,
+              1.5px -1.5px 0 black,
+              -1.5px 1.5px 0 black,
+              1.5px 1.5px 0 black;
           }
 
           > .shield-icon {
@@ -192,7 +197,6 @@ const courses = [
 
           &::after {
             filter: blur(45px);
-            
           }
         }
       }
@@ -202,10 +206,10 @@ const courses = [
   @media (width <= 480px) {
     .get-in-to-section {
       > .shields-container {
-        gap: 1.5rem;
+        gap: 1rem;
         > .course-shield {
-          width: 12rem;
-          height: 8.5rem;
+          width: 11rem;
+          height: 8rem;
 
           > .shield-content {
             padding: 1rem 6px;

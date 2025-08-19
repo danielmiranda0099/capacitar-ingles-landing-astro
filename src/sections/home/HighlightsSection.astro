@@ -1,31 +1,50 @@
 ---
+import Divider from "@/components/Divider.astro";
 import SliderHighlights from "./components/SliderHighlights.astro";
-
-
 ---
 
 <section class="section-container highlights-section">
+  <div class="highlights-header">
+    <h2 class="cs-text-3xl">Resaltaciones</h2>
+    <Divider width="70%" />
+  </div>
   <SliderHighlights />
 </section>
 
 <style>
   .highlights-section {
-    gap: 0.5rem;
-    height: 40vh;
-    padding: 0.5rem;
-  }
+    flex-direction: column;
+    gap: 2.5rem;
 
-  @media (width <= 1600px){
-    .highlights-section {
-      width: 100%;
-      height: 40vh;
+    /* height: 30vh; */
+
+    padding: 0.5rem;
+    margin-top: -2rem;
+
+    > .highlights-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      font-weight: 900;
+      margin: 0 auto;
     }
   }
 
-  @media (width <= 800px){
+  @media (width <= 1600px) {
     .highlights-section {
-      width: 100%;
-      height: 25vh;
+      /* width: 100%;
+      height: 40vh; */
+    }
+  }
+
+  @media (width <= 800px) {
+    .highlights-section {
+      /* width: 95%;
+      height: 35vh; */
+      padding: 0;
     }
   }
 </style>

@@ -87,8 +87,14 @@
 
 <style>
   .faq-section {
+    background: linear-gradient(25deg, var(--bg-blue-700), 80%, #4cc268);
+    width: 100%;
     .accordion {
-      width: 100%;
+      width: 85vw;
+      margin: 0 auto;
+      color: white;
+      padding-top: 5rem;
+      padding-bottom: 8rem;
     }
     .accordion .accordion-item {
       position: relative;
@@ -139,6 +145,7 @@
 
     .accordion button .accordion-title {
       padding: 1em 1.5em 1em 0;
+      color: white;
     }
 
     .accordion button .icon {
@@ -150,6 +157,7 @@
       height: 22px;
       border: 1px solid;
       border-radius: 22px;
+      color: white;
     }
 
     .accordion button .icon::before {
@@ -206,8 +214,8 @@
     }
   }
 
-  @media (width <= 576px){
-    .faq-section {
+  @media (width <= 576px) {
+    .accordion {
       width: 95%;
     }
   }

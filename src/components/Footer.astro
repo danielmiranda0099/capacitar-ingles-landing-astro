@@ -39,12 +39,12 @@ import ClockIcon from "./icons/ClockIcon.astro";
   </div>
 
   <div class="footer-social">
-    <div>
+    <a href="https://www.facebook.com/capacitaringlesvirtual/?locale=es_LA" target="_blank">
       <FacebookIcon className="w-2rem h-2rem" />
-    </div>
-    <div>
+    </a>
+    <a href="https://www.instagram.com/institutocapacitarsincelejo" target="_blank">
       <InstagramIcon className="w-2rem h-2rem" />
-    </div>
+    </a>
   </div>
 </footer>
 
@@ -54,8 +54,8 @@ import ClockIcon from "./icons/ClockIcon.astro";
     justify-content: space-evenly;
     height: fit-content;
     width: 100%;
-    background-color: var(--bg-blue-700);
-    padding: 3rem 2rem;
+    background: linear-gradient(25deg, #4cc268, 20%, var(--bg-blue-700));
+    padding: 6rem 2rem;
 
     .footer-logo {
       width: fit-content;
@@ -102,7 +102,7 @@ import ClockIcon from "./icons/ClockIcon.astro";
     .footer-social {
       display: flex;
       gap: 1.5rem;
-      & div {
+      & a {
         width: 3.5rem;
         height: 3.5rem;
         display: flex;
@@ -112,6 +112,11 @@ import ClockIcon from "./icons/ClockIcon.astro";
         background-color: white;
         padding: 0.8rem;
         border-radius: 100%;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 

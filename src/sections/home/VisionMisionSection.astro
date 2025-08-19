@@ -142,13 +142,13 @@ import Divider from "@/components/Divider.astro";
   }
 
   .icon-container {
-    width: 55px;
-    height: 55px;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin: o auto;
+    margin: 0 auto;
   }
 
   .mission-icon,
@@ -162,8 +162,8 @@ import Divider from "@/components/Divider.astro";
   }
 
   .card-icon {
-    width: 28px;
-    height: 28px;
+    width: 2rem;
+    height: 2rem;
     color: white;
     stroke-width: 2.5;
   }
@@ -178,6 +178,7 @@ import Divider from "@/components/Divider.astro";
   .card-text {
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   /* Efectos decorativos */
@@ -225,10 +226,6 @@ import Divider from "@/components/Divider.astro";
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
-
-    .card {
-      padding: 2rem;
-    }
   }
 
   @media (max-width: 768px) {
@@ -242,11 +239,6 @@ import Divider from "@/components/Divider.astro";
       margin-bottom: 1.5rem;
     }
 
-    .icon-container {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-
     .card-title {
       font-size: 1.5rem;
     }
@@ -257,10 +249,6 @@ import Divider from "@/components/Divider.astro";
   }
 
   @media (max-width: 480px) {
-    .card {
-      padding: 1.5rem;
-    }
-
     .section-header {
       margin-bottom: 2.5rem;
     }
