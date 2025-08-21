@@ -173,6 +173,10 @@ Algunos fabricantes de fuentes también incluyen:
   font-size: 2.25rem;
   line-height: calc(2.5 / 2.25);
 }
+.cs-text-5xl {
+  font-size: 2.45rem;
+  line-height: calc(2.5 / 2.45);
+}
 .cs-text-6xl {
   font-size: 3.75rem;
   line-height: 1;
