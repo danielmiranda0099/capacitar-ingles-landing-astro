@@ -116,7 +116,7 @@ const courses = [
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        filter: blur(0.5px) saturate(1.8);
+        filter: saturate(1.8);
         transition: filter 0.3s ease-in-out;
 
         display: flex;
@@ -208,14 +208,19 @@ const courses = [
       > .shields-container {
         gap: 1rem;
         > .course-shield {
-          width: 11rem;
-          height: 8rem;
+          width: 13rem;
+          height: 11rem;
 
           > .shield-content {
             padding: 1rem 6px;
             > p {
-              font-size: 0.8rem;
+              font-size: 1.2rem;
               width: 80%;
+              text-shadow:
+              -0.7px -0.7px 0 black,
+              0.7px -0.7px 0 black,
+              -0.7px 0.7px 0 black,
+              0.7px 0.7px 0 black;
             }
             > .shield-icon {
               padding-top: 0rem;
