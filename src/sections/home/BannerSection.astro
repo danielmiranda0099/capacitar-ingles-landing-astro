@@ -1,0 +1,72 @@
+---
+import DecorativeBubble from "@/components/DecorativeBubble.astro";
+---
+
+<section class="section-container banner-section">
+  <div class="banner-container">
+    <DecorativeBubble />
+
+    <div class="text-banner">
+      <h2 class="cs-text-3xl cs-text-center">
+        Inglés fácil, práctico y efectivo, Encuentra tu curso ideal
+      </h2>
+      <p class="cs-text-xl cs-text-center">
+        En Capacitar, te acompañamos en cada paso de tu aprendizaje. Nuestros
+        profesores te guían con un método efectivo y personalizado.
+      </p>
+    </div>
+    <a class="cs-btn button-free-trial light" href="#form-register"
+      >Prueba Gratuita</a
+    >
+  </div>
+</section>
+
+<style>
+  .banner-section {
+    width: 65%;
+  }
+  .banner-container {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    background: linear-gradient(25deg, #076460, 80%, var(--bg-blue-700));
+    width: 100%;
+    padding: 3rem;
+    border-radius: 22px;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+
+    .text-banner {
+      position: relative;
+      width: 60% !important;
+      flex-direction: column;
+      width: auto;
+      h2 {
+        font-weight: bold;
+        color: transparent;
+
+        background: linear-gradient(90deg, #2dc7ff 0%, #26f055 50%);
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        /* Borde*/
+        -webkit-text-stroke: 0.9px #b2f5c194;
+        text-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
+
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: white;
+      }
+    }
+
+    .button-free-trial {
+      background:
+        linear-gradient(#3acaff) padding-box,
+        linear-gradient(var(--angle), #0a434d00 60%, rgb(80, 223, 114) 100%)
+          border-box;
+    }
+  }
+</style>

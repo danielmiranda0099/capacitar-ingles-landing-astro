@@ -1,5 +1,13 @@
+---
+import DecorativeBubble from "@/components/DecorativeBubble.astro";
+
+
+---
+
 <section class="section-container faq-section">
+  
   <div class="accordion">
+    <DecorativeBubble />
     <div class="accordion-item">
       <button id="accordion-button-1" aria-expanded="false">
         <span class="accordion-title">¿Qué niveles de inglés ofrecen?</span>
@@ -87,8 +95,11 @@
 
 <style>
   .faq-section {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(25deg, var(--bg-blue-700), 80%, #076460);
     width: 100%;
+    margin-bottom: 15rem;
     .accordion {
       width: 85vw;
       margin: 0 auto;
@@ -98,6 +109,7 @@
     }
     .accordion .accordion-item {
       position: relative;
+      overflow: hidden;
     }
     .accordion .accordion-item::after {
       content: "";
@@ -144,8 +156,15 @@
     }
 
     .accordion button .accordion-title {
-      padding: 1em 1.5em 1em 0;
+      padding: 0.5rem;
       color: white;
+
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      margin: 1.5rem 0;
+
     }
 
     .accordion button .icon {
@@ -158,6 +177,9 @@
       border: 1px solid;
       border-radius: 22px;
       color: white;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .accordion button .icon::before {
@@ -208,8 +230,8 @@
     }
 
     .accordion .accordion-content p {
-      font-size: 1rem;
-      font-weight: 300;
+      font-size: 1.2rem;
+      font-weight: 500;
       margin: 2em 0;
     }
   }

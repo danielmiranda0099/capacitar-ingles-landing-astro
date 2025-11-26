@@ -3,37 +3,38 @@
 ---
 
 <!-- Swiper -->
-<div class="swiper swiper-highlights">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img
-        src="https://www.els.edu/hubfs/ELS/Website/Homepage/diverse-students-studying-english-els-usa.png"
-      />
+<div class="swiper-container">
+  <div class="swiper swiper-highlights">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="https://www.els.edu/hubfs/ELS/Website/Homepage/diverse-students-studying-english-els-usa.png"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://wpvip.edutopia.org/wp-content/uploads/2022/10/iStock-648946500_master.jpg"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://d39eazhratf38c.cloudfront.net/Pictures/1024x536/8/2/7/60827_136864_631984.jpg"
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://content.twinkl.co.uk/website/uploaded/ellie-blog-thumbnail-1610626054.jpg"
+        />
+      </div>
     </div>
-    <div class="swiper-slide">
-      <img
-        src="https://wpvip.edutopia.org/wp-content/uploads/2022/10/iStock-648946500_master.jpg"
-      />
-    </div>
-    <div class="swiper-slide">
-      <img
-        src="https://d39eazhratf38c.cloudfront.net/Pictures/1024x536/8/2/7/60827_136864_631984.jpg"
-      />
-    </div>
-    <div class="swiper-slide">
-      <img
-        src="https://content.twinkl.co.uk/website/uploaded/ellie-blog-thumbnail-1610626054.jpg"
-      />
-    </div>
+    <div class="swiper-pagination"></div>
   </div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next swiper-button-next-highlights"></div>
+  <div class="swiper-button-prev swiper-button-prev-highlights"></div>
 </div>
 
 <style>
   .swiper-highlights {
-    width: 50%;
     aspect-ratio: 5/3 !important; /* 1.67:1 - rectangular moderado */
 
     --tw-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 2px 7px 0 rgb(16 30 30 / 15%),
@@ -52,9 +53,6 @@
         text-align: center;
         font-size: 18px;
         background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         & img {
           display: block;
@@ -88,15 +86,15 @@
   import "swiper/css/navigation";
   import "swiper/css/pagination";
 
-  var swiper = new Swiper(".swiper-highlights", {
+  var swiper_highlights = new Swiper(".swiper-highlights", {
     modules: [Autoplay, Navigation, Pagination],
     loop: true,
     centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: 40,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next-highlights",
+      prevEl: ".swiper-button-prev-highlights",
     },
     pagination: {
       el: ".swiper-pagination",

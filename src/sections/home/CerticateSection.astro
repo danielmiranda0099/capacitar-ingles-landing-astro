@@ -1,13 +1,15 @@
 ---
+import DecorativeBubble from "@/components/DecorativeBubble.astro";
 import Divider from "@/components/Divider.astro";
 import CheckIcon from "@/components/icons/CheckIcon.astro";
 ---
 
 <section class="section-container certificate-section">
+  <DecorativeBubble />
   <div class="certificate-container">
     <div class="certificate-image-container">
       <img
-        src="certificate.webp"
+        src="whyChooseUs.png"
         alt="Certificado de Academia de Inglés"
         class="certificate-img"
       />
@@ -16,52 +18,58 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     <div class="certificate-header-container">
       <div class="title-container">
         <h2 class="certificate-title cs-text-3xl">
-          Certificación Internacional de Inglés
+          Un método efectivo que sí funciona, Aprender inglés nunca había sido
+          tan divertido
         </h2>
         <Divider width="160px" />
       </div>
 
       <p class="certificate-description">
-        Obtén tu certificación oficial que valida tu dominio del idioma inglés.
-        Nuestro programa está diseñado para prepararte con los más altos
-        estándares internacionales y brindarte las herramientas necesarias para
-        destacar en el ámbito profesional y académico.
+        Nuestro programa está diseñado para prepararte y brindarte las
+        herramientas necesarias para destacar en el ámbito profesional y
+        académico.
       </p>
     </div>
 
     <div class="certificate-benefits-container">
       <ul class="certificate-benefits">
         <li class="benefit-item">
-          <div class="benefit-icon-container">
-            <CheckIcon class="benefit-icon" />
+          <div class="container-check-icon">
+            <CheckIcon class="check-icon" />
           </div>
-          <span>Reconocimiento internacional válido</span>
+          <span
+            >Programa estructurado para todas las edades, desde nivel inicial
+            hasta avanzado.</span
+          >
         </li>
 
         <li class="benefit-item">
-          <div class="benefit-icon-container">
-            <CheckIcon class="benefit-icon" />
+          <div class="container-check-icon">
+            <CheckIcon class="check-icon" />
           </div>
           <span>Mejora tus oportunidades laborales</span>
         </li>
 
         <li class="benefit-item">
-          <div class="benefit-icon-container">
-            <CheckIcon class="benefit-icon" />
+          <div class="container-check-icon">
+            <CheckIcon class="check-icon" />
           </div>
-          <span>Acceso a universidades prestigiosas</span>
+          <span
+            >Clases activas y comunicativas para aprender hablando, no
+            memorizando.</span
+          >
         </li>
 
         <li class="benefit-item">
-          <div class="benefit-icon-container">
-            <CheckIcon class="benefit-icon" />
+          <div class="container-check-icon">
+            <CheckIcon class="check-icon" />
           </div>
-          <span>Validez permanente sin vencimiento</span>
+          <span>Método efectivo</span>
         </li>
 
         <li class="benefit-item">
-          <div class="benefit-icon-container">
-            <CheckIcon class="benefit-icon" />
+          <div class="container-check-icon">
+            <CheckIcon class="check-icon" />
           </div>
           <span>Soporte y seguimiento personalizado</span>
         </li>
@@ -72,9 +80,11 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
 <style>
   .certificate-section {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(25deg, #076460, 40%, var(--bg-blue-700));
     width: 100%;
-    padding: 8rem 1rem;
+    padding: 5rem 1rem;
 
     > .certificate-container {
       width: 100%;
@@ -95,13 +105,20 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
         > .certificate-img {
           width: 67%;
           height: auto;
-          border: 2px solid var(--bg-blue-700);
+          /* border: 2px solid var(--bg-blue-700); */
           border-radius: 8px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
+          /* -webkit-mask-image: linear-gradient(black, transparent);*/
+          mask-image: linear-gradient(black, transparent);
+
+          /* -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%); */
+          mask-image: radial-gradient(ellipse, black 50%, transparent 80%);
+          /* linear-gradient(black 60%, transparent); */
         }
       }
 
       > .certificate-header-container {
+        position: relative;
         > .title-container {
           display: flex;
           flex-direction: column;
@@ -121,6 +138,7 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
       }
 
       > .certificate-benefits-container {
+        position: relative;
         grid-column-start: 2;
         .certificate-benefits {
           list-style: none;
@@ -137,25 +155,6 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
           .benefit-item:last-child {
             margin-bottom: 0;
-          }
-          .benefit-icon-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.25rem;
-            background: linear-gradient(
-              135deg,
-              var(--bg-blue-400),
-              var(--bg-green-400)
-            );
-            border-radius: 50%;
-            margin-right: 1rem;
-          }
-          .benefit-icon {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            color: white;
           }
         }
       }
@@ -198,9 +197,9 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
             .benefit-item:last-child {
             }
-            .benefit-icon-container {
+            .container-check-icon {
             }
-            .benefit-icon {
+            .check-icon {
             }
           }
         }
@@ -210,8 +209,6 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
   @media (width <= 680px) {
     .certificate-section {
-      
-
       > .certificate-container {
         > .certificate-image-container {
           > .certificate-img {
@@ -239,10 +236,10 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
             .benefit-item:last-child {
             }
-            .benefit-icon-container {
+            .container-check-icon {
               padding: 0.1rem;
             }
-            .benefit-icon {
+            .check-icon {
               width: 12px;
               height: 12px;
             }

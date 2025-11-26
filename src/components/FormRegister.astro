@@ -1,0 +1,205 @@
+---
+interface Props {
+  columnMode?: "one-col" | "two-col";
+  isBoxShadow?: boolean;
+  prefix?: string;
+}
+
+const { columnMode = "two-col", isBoxShadow = true, prefix = ""  } = Astro.props;
+---
+
+<form class={`form-register ${columnMode} ${isBoxShadow ? "box-shadow-form" : ""}`} aria-label="Formulario de Registro">
+  <div class="inputs-grid">
+    <div class="input-group">
+      <label for={`${prefix}-name`}>Nombre completo:</label>
+      <input
+        type="text"
+        id={`${prefix}-name`}
+        name="name"
+        placeholder="Ingresa tu nombre completo"
+        required
+      />
+    </div>
+
+    <div class="input-group">
+      <label for={`${prefix}-email`}>Correo:</label>
+      <input
+        type="email"
+        id={`${prefix}-email`}
+        name="email"
+        placeholder="tu-correo@gmail.com"
+        required
+      />
+    </div>
+
+    <div class="input-group">
+      <label for={`${prefix}-age`}>Edad:</label>
+      <input
+        type="number"
+        id={`${prefix}-age`}
+        name="age"
+        placeholder="Ingresa tu edad"
+        required
+      />
+    </div>
+
+    <div class="input-group">
+      <label for={`${prefix}-phone`}>Teléfono:</label>
+      <input
+        type="tel"
+        id={`${prefix}-phone`}
+        name="phone"
+        placeholder="123-4567"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button type="submit" class="cs-btn button-free-trial light">
+      Prueba Gratuita
+    </button>
+  </div>
+</form>
+
+<style>
+  .form-register {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 22px;
+  }
+  .box-shadow-form {
+    box-shadow:
+      0 0 5px 0 rgba(78, 105, 105, 0.1),
+      0 2px 7px 0 rgba(78, 105, 105, 0.1),
+      0 4px 4px -2px rgba(78, 105, 105, 0.1);
+  }
+
+  /* Grid adaptable según columnMode */
+  .inputs-grid {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 1 columna */
+  .form-register.one-col .inputs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 2 columnas (default) */
+  .form-register.two-col .inputs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Grupo de input individual */
+  .input-group {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input-group label {
+    font-weight: 600;
+    color: var(--bg-blue-700, #1e3a8a);
+    letter-spacing: -0.01em;
+    font-size: 0.95rem;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    background: #f8fafc;
+    color: #0f2027;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: #62d1f9;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(98, 209, 249, 0.1);
+  }
+
+  .input-group input::placeholder {
+    color: #94a3b8;
+  }
+
+  /* Botón */
+  .button-container {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+  }
+
+  /* Gradientes de fondo - z-index negativo para que no interfieran */
+  .form-register::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 22px;
+    background: linear-gradient(45deg, #77dbff, #ffffff, #ffffff, #88ffa4);
+    filter: blur(22px);
+    opacity: 0.4;
+    z-index: -2;
+  }
+
+  .form-register::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    border: 2.5px solid transparent;
+    background: linear-gradient(
+        45deg,
+        #62d1f9,
+        #ffffff,
+        #ffffff,
+        #ffffff,
+        #ffffff,
+        #82fd9f
+      )
+      border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Responsividad */
+  @media (max-width: 640px) {
+    .form-register.two-col .inputs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-register {
+      padding: 1rem;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-register {
+      font-size: 14px;
+    }
+
+    .input-group input {
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+  }
+</style>

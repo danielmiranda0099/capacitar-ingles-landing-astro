@@ -1,4 +1,13 @@
+---
+import Divider from "@/components/Divider.astro";
+import StarIcon from "@/components/icons/StarIcon.astro";
+---
+
 <section class="section-container testimonies-section">
+  <div class="testimonies-header">
+    <h2 class="cs-text-3xl">Testimonios</h2>
+    <Divider width="60%" />
+  </div>
   <div class="swiper-container">
     <!-- Contenedor principal de Swiper -->
     <div class="swiper testimonies-slider">
@@ -6,125 +15,162 @@
       <div class="swiper-wrapper">
         <!-- Los slides -->
         <div class="swiper-slide">
-          <video controls>
-            <source
-              src="/videos/vertical-01-nino-optimizado.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <div class="container-testimony">
+            <video controls>
+              <source
+                src="/videos/vertical-01-nino-optimizado.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="text-content-testimony">
+              <h2 class="cs-text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
+                quas.
+              </h2>
+
+              <Divider width="45px" />
+
+              <div>
+                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="swiper-slide">
-          <video controls>
-            <source
-              src="/videos/vertical-02-mujer-optimizado.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <div class="container-testimony">
+            <video controls>
+              <source
+                src="/videos/vertical-02-mujer-optimizado.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="text-content-testimony">
+              <h2 class="cs-text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
+                quas.
+              </h2>
+
+              <Divider width="45px" />
+
+              <div>
+                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="swiper-slide">
-          <video controls>
-            <source
-              src="/videos/vertical-03-escalera-optimizado.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-        <div class="swiper-slide">
-          <video controls>
-            <source
-              src="/videos/vertical-01-nino-optimizado.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-        <div class="swiper-slide">
-          <video controls>
-            <source
-              src="/videos/vertical-03-escalera-optimizado.mp4"
-              type="video/mp4"
-            />
-          </video>
+          <div class="container-testimony">
+            <video controls>
+              <source
+                src="/videos/vertical-03-escalera-optimizado.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="text-content-testimony">
+              <h2 class="cs-text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
+                quas.
+              </h2>
+
+              <Divider width="45px" />
+
+              <div>
+                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
+                  stroke="#ffd700"
+                  fill="#ffd700"
+                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Botones de navegación -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination swiper-pagination-testimonies"></div>
     </div>
+    <div class="swiper-button-prev swiper-button-prev-testimonies"></div>
+    <div class="swiper-button-next swiper-button-next-testimonies"></div>
   </div>
 </section>
 
 <style>
+  .testimonies-section {
+    max-width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    /* gap: 2.5rem; */
+
+    .testimonies-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      font-weight: 900;
+      margin: 0 auto;
+    }
+  }
   .swiper-container {
-    width: 40%;
+    width: 50rem;
     margin: 0 auto;
   }
   .swiper {
-    margin-top: 2rem;
-    width: 600px;
+    /* background-color: red; */
   }
   .swiper-wrapper {
     display: flex;
   }
   .swiper-slide {
-    border-radius: 22px;
-    overflow: hidden;
+    overflow: visible;
+    padding: 1rem;
+
+    .container-testimony {
+      padding: 1.5rem;
+      background-color: rgb(249, 254, 255);
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      gap: 1rem;
+      border-radius: 22px;
+      --tw-shadow: 0 0 5px 0 rgba(78, 105, 105, 0.1),
+        0 2px 7px 0 rgba(78, 105, 105, 0.1),
+        0 4px 4px -2px rgba(78, 105, 105, 0.1);
+      box-shadow: var(--tw-shadow);
+      .text-content-testimony {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        h2 {
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+    }
   }
   .swiper-slide video {
-    height: 300px;
+    height: 20rem;
     object-fit: cover;
     border-radius: 22px;
     aspect-ratio: 9 / 16 !important;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    height: 110%;
-    width: 3rem;
-    width: 40%;
-    background: var(--bg-white);
-    background-color: red;
-  }
-  .swiper-button-prev {
-    transform: translate(-10%, -50%);
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      270deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.5690651260504201) 23%,
-      rgba(255, 255, 255, 1) 64%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  }
-  .swiper-button-next {
-    transform: translate(10%, -50%);
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.5690651260504201) 23%,
-      rgba(255, 255, 255, 1) 64%,
-      rgba(255, 255, 255, 1) 100%
-    );
-  }
-
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 100%;
-    padding: 1rem 1.2rem;
-    font-size: 1.8rem;
-    color: var(--color-blue-700);
-    font-weight: 900;
-
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .swiper-button-prev::after {
-    margin-right: -1.5rem;
-  }
-  .swiper-button-next::after {
-    margin-left: -1.5rem;
   }
 </style>
 
@@ -133,59 +179,43 @@
   import Swiper from "swiper";
   import "swiper/css";
   // Módulo Navigation de Swiper y estilos
-  import { Navigation, EffectCoverflow } from "swiper/modules";
+  import {
+    Autoplay,
+    Navigation,
+    Pagination,
+    EffectCoverflow,
+  } from "swiper/modules";
   import "swiper/css/navigation";
   import "swiper/css/effect-coverflow";
 
   // Configurar Swiper
-  const swiper = new Swiper(".testimonies-slider", {
-    modules: [Navigation, EffectCoverflow], // definir los módulos a usar
+  const swiper_testimonies = new Swiper(".testimonies-slider", {
+    modules: [Autoplay, Navigation, Pagination, EffectCoverflow],
     effect: "coverflow",
     loop: true, // definir si los slides estarán en bucle
     centeredSlides: true,
-    slidesPerView: 3, // agregar número de slides para la pantalla
+    slidesPerView: 1, // agregar número de slides para la pantalla
     spaceBetween: 40, // separación entre slides en px
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
       depth: 100,
-      modifier: 1.5,
+      modifier: 1,
       slideShadows: true,
     },
     navigation: {
       // definir botones next y prev para el módulo Navigation
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev-testimonies",
+      nextEl: ".swiper-button-next-testimonies",
+    },
+    pagination: {
+      el: ".swiper-pagination-testimonies",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
     },
   });
 </script>
-
-<!-- <script>
-  // Core de Swiper y estilos
-  import Swiper from "swiper";
-  import "swiper/css";
-  // Módulo Navigation de Swiper y estilos
-  import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-  import "swiper/css/navigation";
-  import "swiper/css/effect-coverflow";
-  import "swiper/css/pagination";
-
-  // Configurar Swiper
-  let swiper = new Swiper(".swiper", {
-    modules: [EffectCoverflow],
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 3,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  });
-</script> -->

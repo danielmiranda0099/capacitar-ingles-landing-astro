@@ -5,9 +5,12 @@ import InstagramIcon from "./icons/InstagramIcon.astro";
 import FacebookIcon from "./icons/FacebookIcon.astro";
 import EmailIcon from "./icons/EmailIcon.astro";
 import ClockIcon from "./icons/ClockIcon.astro";
+import DecorativeBubble from "./DecorativeBubble.astro";
 ---
 
 <footer>
+  <DecorativeBubble />
+
   <div class="footer-logo">
     <img src="/logo.png" />
     <div class="slogan">
@@ -39,10 +42,16 @@ import ClockIcon from "./icons/ClockIcon.astro";
   </div>
 
   <div class="footer-social">
-    <a href="https://www.facebook.com/capacitaringlesvirtual/?locale=es_LA" target="_blank">
+    <a
+      href="https://www.facebook.com/capacitaringlesvirtual/?locale=es_LA"
+      target="_blank"
+    >
       <FacebookIcon className="w-2rem h-2rem" />
     </a>
-    <a href="https://www.instagram.com/institutocapacitarsincelejo" target="_blank">
+    <a
+      href="https://www.instagram.com/institutocapacitarsincelejo"
+      target="_blank"
+    >
       <InstagramIcon className="w-2rem h-2rem" />
     </a>
   </div>
@@ -50,6 +59,8 @@ import ClockIcon from "./icons/ClockIcon.astro";
 
 <style>
   footer {
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     height: fit-content;
@@ -58,6 +69,7 @@ import ClockIcon from "./icons/ClockIcon.astro";
     padding: 6rem 2rem;
 
     .footer-logo {
+      position: relative;
       width: fit-content;
       display: flex;
       flex-direction: column;
@@ -84,6 +96,7 @@ import ClockIcon from "./icons/ClockIcon.astro";
     }
 
     .footer-info {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -101,6 +114,7 @@ import ClockIcon from "./icons/ClockIcon.astro";
     }
 
     .footer-social {
+      position: relative;
       display: flex;
       gap: 1.5rem;
       & a {

@@ -1,16 +1,14 @@
 ---
 import CardImageHorizontal from "@/components/CardImageHorizontal.astro";
 import SliderVideoHome from "./components/SliderVideoHome.astro";
-import MousePointerClickIcon from "@/components/icons/MousePointerClickIcon.astro";
 import Divider from "@/components/Divider.astro";
-import ModalPlatformFreeCourses from "./components/ModalPlatformFreeCourses.astro";
 import ModalInglesConversacional from "@/components/heroSection/ModalInglesConversacional.astro";
 import ModalInglesForKids from "@/components/heroSection/ModalInglesForKids.astro";
 import ModalVirtualEnglishWithLiveClasses from "@/components/heroSection/ModalVirtualEnglishWithLiveClasses.astro";
 import ModalLiveEnglishWithNativeSpeakers from "@/components/heroSection/ModalLiveEnglishWithNativeSpeakers.astro";
 import ModalOtherLanguages from "@/components/heroSection/ModalOtherLanguages.astro";
 import ModalArts from "@/components/heroSection/ModalArts.astro";
-import FormAction from "./FormAction.astro";
+import FormRegister from "@/components/FormRegister.astro";
 ---
 
 <section class="section-container hero-section">
@@ -66,12 +64,14 @@ import FormAction from "./FormAction.astro";
     </div>
   </div>
 
-  <div class="slider-video-container">
-    <SliderVideoHome />
-  </div>
+  <div class="container-data-hero">
+    <div class="slider-video-container">
+      <SliderVideoHome />
+    </div>
 
-  <div class="form-container">
-    <FormAction />
+    <div class="form-container">
+      <FormRegister columnMode="two-col" prefix="hero-form"/>
+    </div>
   </div>
 </section>
 
@@ -81,8 +81,9 @@ import FormAction from "./FormAction.astro";
     margin-bottom: 5rem;
     justify-content: center;
     align-items: center;
+    gap: 5rem;
     > .all-courses-container {
-      width: 35%;
+      width: 37%;
       display: flex;
       height: fit-content;
       gap: 1rem;
@@ -127,15 +128,22 @@ import FormAction from "./FormAction.astro";
         }
       }
     }
+    .container-data-hero {
+      width: 63%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
 
-    .slider-video-container {
-      margin: 0 auto;
-      width: 30%;
-    }
+      .slider-video-container {
+        margin: 0 auto;
+        width: 44.5%;
+      }
 
-    .form-container {
-      width: 35%;
-      height: 100%;
+      .form-container {
+        width: 55.5%;
+        height: 100%;
+      }
     }
   }
 

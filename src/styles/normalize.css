@@ -26,6 +26,9 @@ html {
   font-feature-settings: var(--default-font-feature-settings, normal);
   font-variation-settings: var(--default-font-variation-settings, normal);
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  /* scroll-margin-top: -500px; */
+  scroll-padding-top: 150px;
 }
 
 body {

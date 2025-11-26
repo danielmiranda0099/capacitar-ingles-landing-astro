@@ -1,0 +1,43 @@
+---
+import Divider from "@/components/Divider.astro";
+import FeatureItem from "@/components/FeatureItem.astro";
+import CheckIcon from "@/components/icons/CheckIcon.astro";
+---
+
+<section class="section-container section-feature-items">
+  <FeatureItem title="Aprende hablando">
+    <CheckIcon class="feature-icon" />
+  </FeatureItem>
+  <!-- <div class="container-divider"><Divider width="30px" height="5px" /></div> -->
+  <FeatureItem title="Fluidez real">
+    <CheckIcon class="feature-icon" />
+  </FeatureItem>
+  <!-- <div class="container-divider"><Divider width="30px" height="5px" /></div> -->
+  <FeatureItem title="Confianza total">
+    <CheckIcon class="feature-icon" />
+  </FeatureItem>
+  <!-- <div class="container-divider"><Divider width="30px" height="5px" /></div> -->
+  <FeatureItem title="20 años enseñando">
+    <CheckIcon class="feature-icon" />
+  </FeatureItem>
+  <!-- <div class="container-divider"><Divider width="30px" height="5px" /></div> -->
+  <FeatureItem title="Acompañamiento experto">
+    <CheckIcon class="feature-icon" />
+  </FeatureItem>
+</section>
+
+<style>
+  .section-feature-items {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .feature-icon {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+  }
+</style>

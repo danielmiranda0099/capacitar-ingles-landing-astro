@@ -1,0 +1,346 @@
+---
+import DecorativeBubble from "@/components/DecorativeBubble.astro";
+import FormRegister from "@/components/FormRegister.astro";
+import CheckIcon from "@/components/icons/CheckIcon.astro";
+---
+
+<section class="section-container section-form-register">
+  <div class="container">
+    <!-- Benefits Side -->
+    <div class="benefits-side">
+      <DecorativeBubble />
+
+      <div class="benefits-content">
+        <h1 class="cs-text-3xl">
+          Inscríbete y empieza tu camino al inglés de forma rápida y efectiva
+        </h1>
+        <p class="subtitle">19 años enseñando inglés con resultados reales</p>
+
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="container-check-icon">
+              <CheckIcon class="check-icon" />
+            </div>
+            <div class="benefit-text">
+              <h3>Domina entrevistas, reuniones y la vida diaria</h3>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="container-check-icon">
+              <CheckIcon class="check-icon" />
+            </div>
+            <div class="benefit-text">
+              <h3>Aprendizaje dinámico y efectivo</h3>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="container-check-icon">
+              <CheckIcon class="check-icon" />
+            </div>
+            <div class="benefit-text">
+              <h3>Confianza respaldada por años de resultados</h3>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="container-check-icon">
+              <CheckIcon class="check-icon" />
+            </div>
+            <div class="benefit-text">
+              <h3>Resultados garantizados</h3>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="container-check-icon">
+              <CheckIcon class="check-icon" />
+            </div>
+            <div class="benefit-text">
+              <h3>Acceso a rutas para niños, jóvenes y adultos</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Side -->
+    <div class="form-side" id="form-register">
+      <FormRegister columnMode="one-col" isBoxShadow={false} prefix="form-section"/>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 100%;
+    background: white;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.02),
+      0 8px 24px rgba(0, 0, 0, 0.04),
+      0 24px 60px rgba(0, 0, 0, 0.08);
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Left Side - Benefits */
+  .benefits-side {
+    width: 60%;
+    background: linear-gradient(25deg, #076460, 40%, var(--bg-blue-700));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 4rem;
+  }
+
+  /* Animated mesh gradient background */
+  .benefits-side::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 20% 50%,
+        rgba(139, 233, 253, 0.15) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(34, 211, 238, 0.1) 0%,
+        transparent 50%
+      );
+    animation: meshMove 25s ease-in-out infinite;
+  }
+
+  .benefits-side::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(34, 211, 238, 0.08) 0%,
+      transparent 70%
+    );
+    top: -200px;
+    right: -200px;
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes meshMove {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-20px, 20px) rotate(240deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.08;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.12;
+    }
+  }
+
+  .benefits-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .benefits-side h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    animation: fadeInLeft 0.8s ease-out 0.3s both;
+  }
+
+  .benefits-side .subtitle {
+    color: white;
+    line-height: 1.7;
+    animation: fadeInLeft 0.8s ease-out 0.4s both;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    animation: fadeInLeft 0.8s ease-out both;
+    padding: 0.8rem;
+    width: 50ch;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .benefit-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 233, 253, 0.3);
+    transform: translateX(8px);
+  }
+
+  .benefit-item:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  .benefit-item:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .benefit-item:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+
+  .benefit-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(
+      135deg,
+      rgba(139, 233, 253, 0.2) 0%,
+      rgba(34, 211, 238, 0.1) 100%
+    );
+    border: 1px solid rgba(139, 233, 253, 0.2);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    font-size: 26px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .benefit-item:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .benefit-text h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  .benefit-text p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Right Side - Form */
+  .form-side {
+    width: 40%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0) rotate(-180deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-side {
+      padding: 50px 40px;
+    }
+
+    .benefits-side h1 {
+      font-size: 42px;
+    }
+
+    .form-side {
+      padding: 50px 40px;
+    }
+
+    .form-header h2 {
+      font-size: 36px;
+    }
+  }
+</style>

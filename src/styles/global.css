@@ -100,9 +100,17 @@ body::before {
   margin-bottom: var(--size-8);
 }
 
-.swiper:hover {
-  scale: 1.005;
-  filter: brightness(1.05) contrast(1.05);
+.swiper-container {
+  position: relative;
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
@@ -121,15 +129,15 @@ body::before {
 }
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  background: rgba(255, 255, 255, 0.8);  
+  background: rgba(255, 255, 255, 0.8);
   transform: scale(1.09);
 }
 
 .swiper-button-prev::after {
-  margin-right: -1.5rem;
+  margin-right: 3rem;
 }
 .swiper-button-next::after {
-  margin-left: -1.5rem;
+  margin-left: 3rem;
 }
 
 .swiper-pagination {
@@ -161,4 +169,122 @@ body::before {
   opacity: 1 !important;
   transform: scale(1.6) !important;
   border: 1px solid rgb(52, 53, 61);
+}
+
+/************************************/
+/* check icon container */
+.container-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  background: linear-gradient(135deg, var(--bg-blue-400), var(--bg-green-400));
+  border-radius: 50%;
+  margin-right: 1rem;
+  .check-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: white;
+  }
+}
+
+/************************************/
+/* button inscription */
+.button-container {
+  padding: 0 1rem 1rem 1rem;
+}
+.button-free-trial {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  /* Estilos para el borde animado */
+  background: rgb(58, 202, 255);
+  background: linear-gradient(
+    28deg,
+    rgba(58, 202, 255, 0.7) 30%,
+    rgba(128, 237, 153, 0.9) 100%
+  );
+
+  border: 3px solid #0000;
+  background: linear-gradient(#3acaff) padding-box,
+    linear-gradient(var(--angle), #fff 60%, rgb(80, 223, 114) 100%) border-box;
+  animation: 3s rotate linear infinite;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+
+  z-index: 1; /* Asegura que el botón esté por encima del contenedor */
+}
+/* Pseudo-elemento para el efecto shiner */
+.button-free-trial::before {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* Para que el shiner esté encima del fondo del botón pero debajo del texto si es necesario */
+  height: 90%;
+  border-radius: 22px;
+
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0%, rgba(255, 255, 255, 0)),
+    color-stop(40%, rgba(255, 255, 255, 0)),
+    color-stop(50%, rgba(255, 255, 255, 0.8)),
+    color-stop(60%, rgba(255, 255, 255, 0)),
+    color-stop(100%, rgba(255, 255, 255, 0))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* Ajusta el filtro para la transparencia */
+
+  background-repeat: no-repeat;
+  background-position: -300px 0; /* Comienza el shiner fuera de la vista */
+  background-size: 300%;
+  animation: light 4s infinite alternate, shine-delay 4s forwards;
+
+  animation-delay: 0s, 2s;
 }

@@ -1,0 +1,52 @@
+---
+
+---
+
+<div class="decorative-shape shape-1"></div>
+<div class="decorative-shape shape-2"></div>
+
+<style>
+  /* Decorative elements */
+  .decorative-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(139, 233, 253, 0.06);
+    backdrop-filter: blur(40px);
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: -100px;
+    animation: float1 20s ease-in-out infinite;
+  }
+
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 15%;
+    right: -80px;
+    animation: float2 15s ease-in-out infinite;
+  }
+
+  @keyframes float1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(50px, -50px);
+    }
+  }
+
+  @keyframes float2 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-30px, 30px);
+    }
+  }
+</style>
