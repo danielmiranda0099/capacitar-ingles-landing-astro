@@ -1,0 +1,160 @@
+---
+import Divider from "@/components/Divider.astro";
+
+export interface Props {
+  graduations: Array<{
+    title: {
+      rendered: string;
+    };
+    acf: {
+      image_1: string;
+      image_2: string;
+      image_3: string;
+      image_4: string;
+    };
+  }>;
+}
+
+const { graduations } = Astro.props;
+---
+
+<div class="swiper swiper-graduations">
+  <div class="swiper-wrapper">
+    {graduations.map((graduation) => (
+      <div class="swiper-slide">
+        <div class="title-container">
+          <h2 class="cs-text-3xl">{graduation.title.rendered}</h2>
+          <Divider width="120px" />
+        </div>
+        <div class="vento-grid-images-graduations-container">
+          <div class="vento-grid-image-item-0 grid-item-vertical">
+            <img src={graduation.acf.image_1} />
+          </div>
+          <div class="vento-grid-image-item-1 grid-item-horizontal">
+            <img src={graduation.acf.image_2} />
+          </div>
+          <div class="vento-grid-image-item-2 grid-item-horizontal">
+            <img src={graduation.acf.image_3} />
+          </div>
+          <div class="vento-grid-image-item-3 grid-item-horizontal">
+            <img src={graduation.acf.image_4} />
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<style>
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    > h2 {
+      font-weight: 700;
+    }
+  }
+  .vento-grid-images-graduations-container {
+    width: 100%;
+    height: 65vh;
+    display: grid;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    gap: 1.5rem;
+
+    & div {
+      overflow: hidden;
+      border-radius: 22px;
+      /* background-color: red; */
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .vento-grid-image-item-0 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 5;
+    grid-column-end: 3;
+  }
+  .vento-grid-image-item-1 {
+    grid-row-start: 1;
+    grid-column-start: 3;
+
+    grid-row-end: 3;
+    grid-column-end: 7;
+  }
+  .vento-grid-image-item-2 {
+    grid-row-start: 3;
+    grid-column-start: 3;
+
+    grid-row-end: 5;
+    grid-column-end: 5;
+  }
+  .vento-grid-image-item-3 {
+    grid-row-start: 3;
+    grid-column-start: 5;
+
+    grid-row-end: 5;
+    grid-column-end: 7;
+  }
+
+  @media (width <= 800px) {
+    .vento-grid-images-graduations-container {
+      height: 50vh;
+    }
+  }
+
+  @media (width <= 500px) {
+    .graduations-slider-section {
+      width: 95%;
+    }
+    .vento-grid-images-graduations-container {
+      height: 35vh;
+    }
+  }
+</style>
+
+<!-- Initialize Swiper -->
+<script>
+  // Core de Swiper y estilos
+  import Swiper from "swiper";
+  import "swiper/css";
+  // Módulo Navigation de Swiper y estilos
+  import { Autoplay, Navigation, Pagination } from "swiper/modules";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+
+  var swiper = new Swiper(".swiper-graduations", {
+    modules: [Autoplay, Navigation, Pagination],
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: 40,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
+    },
+  });
+</script>
