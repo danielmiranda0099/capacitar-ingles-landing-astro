@@ -52,27 +52,25 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
               <h3>Resultados garantizados</h3>
             </div>
           </div>
-
-          <div class="benefit-item">
-            <div class="container-check-icon">
-              <CheckIcon class="check-icon" />
-            </div>
-            <div class="benefit-text">
-              <h3>Acceso a rutas para niños, jóvenes y adultos</h3>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
     <!-- Form Side -->
     <div class="form-side" id="form-register">
-      <FormRegister columnMode="one-col" isBoxShadow={false} prefix="form-section"/>
+      <FormRegister
+        columnMode="one-col"
+        isBoxShadow={false}
+        prefix="form-section"
+      />
     </div>
   </div>
 </section>
 
 <style>
+  .section-form-register {
+    margin-top: 8rem;
+  }
   .container {
     display: flex;
     margin: 0 auto;
@@ -109,42 +107,6 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     position: relative;
     overflow: hidden;
     padding: 2rem 4rem;
-  }
-
-  /* Animated mesh gradient background */
-  .benefits-side::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-        circle at 20% 50%,
-        rgba(139, 233, 253, 0.15) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 80%,
-        rgba(34, 211, 238, 0.1) 0%,
-        transparent 50%
-      );
-    animation: meshMove 25s ease-in-out infinite;
-  }
-
-  .benefits-side::after {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(
-      circle,
-      rgba(34, 211, 238, 0.08) 0%,
-      transparent 70%
-    );
-    top: -200px;
-    right: -200px;
-    animation: pulse 8s ease-in-out infinite;
   }
 
   @keyframes meshMove {
@@ -214,7 +176,8 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
   .benefit-item {
     display: flex;
-    align-items: flex-start;
+    justify-content: start;
+    align-items: center;
     animation: fadeInLeft 0.8s ease-out both;
     padding: 0.8rem;
     width: 50ch;
@@ -223,6 +186,13 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    .container-check-icon {
+      .check-icon {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
   }
 
   .benefit-item:hover {
@@ -231,19 +201,9 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     transform: translateX(8px);
   }
 
-  .benefit-item:nth-child(1) {
-    animation-delay: 0.5s;
-  }
-  .benefit-item:nth-child(2) {
-    animation-delay: 0.6s;
-  }
-  .benefit-item:nth-child(3) {
-    animation-delay: 0.7s;
-  }
-
   .benefit-icon {
-    width: 56px;
-    height: 56px;
+    width: 3rem;
+    height: 3rem;
     background: linear-gradient(
       135deg,
       rgba(139, 233, 253, 0.2) 0%,
@@ -254,9 +214,9 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
+    margin-right: 1.25rem;
     flex-shrink: 0;
-    font-size: 26px;
+    font-size: 1rem;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -266,15 +226,14 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
 
   .benefit-text h3 {
     color: white;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 8px;
     font-family: "Space Grotesk", sans-serif;
   }
 
   .benefit-text p {
     color: rgba(255, 255, 255, 0.65);
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -321,26 +280,32 @@ import CheckIcon from "@/components/icons/CheckIcon.astro";
     }
   }
 
-  /* Responsive */
-  @media (max-width: 968px) {
+  @media screen and (width <= 800px) {
     .container {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
-
+    .section-form-register {
+      width: 95%;
+    }
     .benefits-side {
-      padding: 50px 40px;
+      padding: 2rem 1rem;
+      width: 100%;
     }
-
-    .benefits-side h1 {
-      font-size: 42px;
+    .benefits-list {
+      flex-direction: row;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .benefit-item {
+      max-width: 47%;
+      padding: 0.3rem;
+    }
+    .benefit-text h3 {
+      font-size: 0.8rem;
     }
 
     .form-side {
-      padding: 50px 40px;
-    }
-
-    .form-header h2 {
-      font-size: 36px;
+      width: 100%;
     }
   }
 </style>

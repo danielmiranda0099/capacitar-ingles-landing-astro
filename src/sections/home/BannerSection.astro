@@ -40,9 +40,8 @@ import DecorativeBubble from "@/components/DecorativeBubble.astro";
 
     .text-banner {
       position: relative;
-      width: 60% !important;
+      width: 60%;
       flex-direction: column;
-      width: auto;
       h2 {
         font-weight: bold;
         color: transparent;
@@ -67,6 +66,18 @@ import DecorativeBubble from "@/components/DecorativeBubble.astro";
         linear-gradient(#3acaff) padding-box,
         linear-gradient(var(--angle), #0a434d00 60%, rgb(80, 223, 114) 100%)
           border-box;
+    }
+  }
+
+  @media screen and (width <= 1600px) {
+    .banner-section {
+      width: 95%;
+    }
+    .banner-container {
+      flex-direction: column;
+      .text-banner {
+        width: auto;
+      }
     }
   }
 </style>

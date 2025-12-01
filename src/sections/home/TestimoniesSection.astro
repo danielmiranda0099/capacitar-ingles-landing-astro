@@ -31,13 +31,13 @@ import StarIcon from "@/components/icons/StarIcon.astro";
               <Divider width="45px" />
 
               <div>
-                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                <StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" />
               </div>
             </div>
           </div>
@@ -60,13 +60,13 @@ import StarIcon from "@/components/icons/StarIcon.astro";
               <Divider width="45px" />
 
               <div>
-                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                <StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" />
               </div>
             </div>
           </div>
@@ -89,13 +89,13 @@ import StarIcon from "@/components/icons/StarIcon.astro";
               <Divider width="45px" />
 
               <div>
-                <StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                <StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" /><StarIcon
-                  stroke="#ffd700"
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" /><StarIcon
+width="1.8rem" height="1.8rem"                   stroke="#ffd700"
                   fill="#ffd700"
-                /><StarIcon stroke="#ffd700" fill="#ffd700" />
+                /><StarIcon width="1.8rem" height="1.8rem" stroke="#ffd700" fill="#ffd700" />
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ import StarIcon from "@/components/icons/StarIcon.astro";
 
 <style>
   .testimonies-section {
-    max-width: 100%;
+    width: 95%;
     overflow: hidden;
     flex-direction: column;
     /* gap: 2.5rem; */
@@ -171,6 +171,28 @@ import StarIcon from "@/components/icons/StarIcon.astro";
     object-fit: cover;
     border-radius: 22px;
     aspect-ratio: 9 / 16 !important;
+  }
+
+  @media screen and (width <= 800px) {
+    .swiper-container {
+      width: 100%;
+    }
+    .swiper-slide {
+      .container-testimony {
+        padding: 0.8rem;
+        gap: 0.5rem;
+        .text-content-testimony {
+          h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .swiper-slide video {
+      height: 16rem;
+    }
   }
 </style>
 

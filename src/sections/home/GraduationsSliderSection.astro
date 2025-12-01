@@ -100,9 +100,13 @@ import Divider from "@/components/Divider.astro";
 </section>
 
 <style>
-
-  .graduations-slider-section, .swiper-container {
+  .graduations-slider-section,
+  .swiper-container {
+    margin: 0 auto;
     width: 60vw;
+    .swiper-slide {
+      flex-direction: column;
+    }
   }
   .title-container {
     display: flex;
@@ -155,11 +159,12 @@ import Divider from "@/components/Divider.astro";
   }
 
   @media (width <= 500px) {
-    .graduations-slider-section {
-      width: 95%;
-    }
+    .graduations-slider-section,
+  .swiper-container {
+    width: 95%;
+  }
     .vento-grid-images-graduations-container {
-      height: 35vh;
+      height: 33vh;
     }
   }
 </style>
