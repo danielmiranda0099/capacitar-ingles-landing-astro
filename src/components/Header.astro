@@ -14,13 +14,25 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
       </div>
     </a>
     <div class="options-container">
-      <a class="cs-btn button-inscription" href="#form-register"
-        >Inscribete aquí <MousePointerClickIcon /></a
+      <a
+        class="cs-btn button-inscription"
+        href="#form-register"
+        id="btn-inscription">Inscribete aquí <MousePointerClickIcon /></a
       >
       <!-- <MenuIcon /> -->
     </div>
   </div>
 </header>
+
+<script>
+  // Ocultar el botón si la URL termina en /thank-you
+  if (window.location.pathname.endsWith("/thank-you")) {
+    const btnInscription = document.getElementById("btn-inscription");
+    if (btnInscription) {
+      btnInscription.style.display = "none";
+    }
+  }
+</script>
 
 <style>
   header {
@@ -110,10 +122,10 @@ import MousePointerClickIcon from "./icons/MousePointerClickIcon.astro";
         .slogan {
           > h2 {
             text-shadow:
-            -1px -1px 0 rgb(255, 255, 255),
-            1px -1px 0 rgb(255, 255, 255),
-            -1px 1px 0 rgb(255, 255, 255),
-            1px 1px 0 rgb(255, 255, 255);
+              -1px -1px 0 rgb(255, 255, 255),
+              1px -1px 0 rgb(255, 255, 255),
+              -1px 1px 0 rgb(255, 255, 255),
+              1px 1px 0 rgb(255, 255, 255);
           }
           > span {
             margin-top: 0px;
